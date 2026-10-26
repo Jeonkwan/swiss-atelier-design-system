@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-  <title>Swiss Atelier (v1.0.0) — Living Information Design System &amp; Agent Hub</title>
+  <title>Swiss Atelier (v1.1.0) — Living Information Design System &amp; Agent Hub</title>
   <meta name="description" content="Swiss Atelier: a living design system for technical documents, editorial diagrams, and agents. Explore tokens, components, and ready-to-use examples." />
   <link rel="stylesheet" href="./dist/site.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
         <div class="flex items-center gap-2.5">
           <span class="font-ui font-semibold text-sm text-[#141413]">Swiss Atelier</span>
           <span class="text-[#94A3B8]">/</span>
-          <span class="font-mono-code text-xs text-[#57534E]">v1.0.0 Living Design System</span>
+          <span class="font-mono-code text-xs text-[#57534E]">v1.1.0 Living Design System</span>
           <span class="badge-teal hidden sm:inline-block">Quiet Hairline · Literata 440 · Agent-Ready</span>
         </div>
       </div>
@@ -67,10 +67,10 @@
         </nav>
       </div>
 
-      <!-- Locked System DNA Card -->
+      <!-- Identity &amp; Defaults Card -->
       <div class="surface-card p-4 space-y-3 font-ui text-xs">
         <div class="flex items-center justify-between">
-          <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E] font-semibold">Locked System DNA</span>
+          <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E] font-semibold">Identity &amp; Defaults</span>
           <span class="w-2 h-2 rounded-full bg-[#0F766E]"></span>
         </div>
         <div class="space-y-2 pt-1 border-t border-[#CBD5E1] text-[11px]">
@@ -113,6 +113,11 @@
 
     <!-- MAIN CONTENT STREAM (9 cols on Desktop) -->
     <main id="main-content" class="lg:col-span-9 space-y-12">
+      <div class="atelier-callout-note font-ui space-y-3" aria-label="Start with Swiss Atelier">
+        <p><strong>Swiss Atelier is a static design system for technical authors and agents.</strong> Start with a template, establish the reader's task and evidence, then use the specimen to inspect presentation choices. The storage-engine story and every metric below are illustrative.</p>
+        <p><a href="./templates/starter-adr.html" class="underline">Write an ADR</a> · <a href="./templates/starter-diagram.html" class="underline">Start a diagram</a> · <a href="./templates/starter-integration.html" class="underline">Import the public bundle</a> · <a href="./skills/swiss-atelier/SKILL.md" class="underline">Instruct an agent</a> · <a href="./README.md" class="underline">Human guide</a> · <a href="./CONTRIBUTING.md" class="underline">Contribute</a></p>
+        <p class="text-sm">Version 1.1.0. CSS, JS, tokens, templates, and guidance must come from the same checkout or release. Pages tracks deployed main; use a complete tagged release for stable consumption.</p>
+      </div>
 
       <!-- =====================================================================
            MODULE 01: EDITORIAL HERO, METADATA RIBBON & 4-CARD KPI STRIP
@@ -121,11 +126,11 @@
         <div class="px-6 sm:px-10 py-3 bg-[#E4E4E7] border-b border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-ui text-xs">
           <div class="flex flex-wrap items-center gap-2">
             <span class="badge-orange">ADR-204 · ILLUSTRATIVE SPECIMEN</span>
-            <span class="badge-teal">STATUS: PRODUCTION VERIFIED</span>
+            <span class="badge-teal">STATUS: ILLUSTRATIVE PROPOSAL</span>
             <span class="font-mono-code text-[11px] text-[#57534E]">· REGION: ap-southeast-1</span>
           </div>
           <div class="font-mono-code text-[11px] text-[#57534E]">
-            Swiss Atelier v1.0.0 · Example content and metrics
+            Swiss Atelier v1.1.0 · Living design system
           </div>
         </div>
 
@@ -135,60 +140,52 @@
               Distributed State &amp; Read-Path Engineering
             </div>
             <h1 class="font-display text-3xl sm:text-5xl leading-[1.1]">
-              Zero-Lock Snapshot Ring Buffers for Sub-2ms Global Read Consensus
+              01. A Proposed Snapshot Ring Read Path
             </h1>
             <p class="font-body text-base sm:text-lg max-w-[66ch] text-[#292524]">
-              When a distributed storage engine serves 450,000 queries per second across regional edge POPs, synchronous quorum reads introduce unacceptable tail latency. This specification details our transition to a <strong>lease-verified ring buffer</strong> that bounds staleness to <span class="inline-code-focal">1,800ms</span> while cutting p99 read latency by 87%.
+              This fictional storage-engine example explores a ring-buffer read path with quorum fallback. The proposed design targets replication lag below <span class="inline-code-focal">1,800ms</span> and expires a lease after <span class="inline-code">2,000ms</span>. Its numbers illustrate presentation; no workload measurements or production verification are supplied.
             </p>
           </div>
 
+          <p class="font-ui text-sm"><strong>Metric provenance:</strong> synthetic design values, not observations; period, sample size, and uncertainty are unspecified. p99 is a read-latency percentile in ms; hit ratio is hits/all reads; contention is blocked reads/all reads. The 87% change compares synthetic 1.84ms with 14.2ms. Only hit ratio uses a bar, with width equal to that percentage on a 0–100% scale.</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
             <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#D9381E]">
               <div class="flex items-center justify-between">
-                <span class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#D9381E]">p99 Read Latency</span>
+                <span class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#D9381E]">Synthetic p99 Latency</span>
                 <span class="font-mono-code text-[10px] text-[#D9381E]">-87%</span>
               </div>
               <div class="font-display text-3xl mt-1.5 text-[#141413]">1.84 ms</div>
-              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
-                <div class="h-full bg-[#D9381E]" style="width: 18%"></div>
-              </div>
-              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Down from 14.2ms quorum read</div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Synthetic comparator: 14.2ms</div>
             </div>
 
             <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#0F766E]">
               <div class="flex items-center justify-between">
-                <span class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#0F766E]">Cache Hit Ratio</span>
-                <span class="font-mono-code text-[10px] text-[#0F766E]">SLA MET</span>
+                <span class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#0F766E]">Synthetic Hit Ratio</span>
+                <span class="font-mono-code text-[10px] text-[#0F766E]">SYNTHETIC</span>
               </div>
               <div class="font-display text-3xl mt-1.5 text-[#141413]">94.6%</div>
               <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
-                <div class="h-full bg-[#0F766E]" style="width: 94.6%"></div>
+                <div class="h-full bg-[#0F766E]" style="width: 94.6%" aria-hidden="true"></div>
               </div>
-              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Verified across 12 edge POPs</div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Hits / reads · linear scale 0–100%</div>
             </div>
 
             <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1]">
               <div class="flex items-center justify-between">
-                <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E]">Lease Window</span>
+                <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E]">Example Lease Limit</span>
                 <span class="font-mono-code text-[10px] text-[#57534E]">BOUNDED</span>
               </div>
               <div class="font-display text-3xl mt-1.5 text-[#141413]">2,000 ms</div>
-              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
-                <div class="h-full bg-[#57534E]" style="width: 50%"></div>
-              </div>
-              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Monotonic hybrid logical clock</div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Lease age, not replication lag</div>
             </div>
 
             <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1]">
               <div class="flex items-center justify-between">
-                <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E]">Lock Contention</span>
+                <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E]">Synthetic Contention</span>
                 <span class="font-mono-code text-[10px] text-[#0F766E]">ZERO-LOCK</span>
               </div>
               <div class="font-display text-3xl mt-1.5 text-[#141413]">0.00%</div>
-              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
-                <div class="h-full bg-[#0F766E]" style="width: 100%"></div>
-              </div>
-              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Atomic epoch pointer swap</div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Synthetic blocked reads / all reads</div>
             </div>
           </div>
         </div>
@@ -201,7 +198,7 @@
         <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-baseline justify-between gap-2">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 02 · Editorial Readability</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">1. Long-Form Technical Prose, Margin Sidenotes &amp; Callouts</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">02. Long-Form Technical Prose, Margin Sidenotes &amp; Callouts</h2>
           </div>
           <span class="badge-neutral">Literata 440 · 65ch Measure</span>
         </div>
@@ -209,15 +206,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div class="lg:col-span-8 space-y-4">
             <p class="font-body">
-              In traditional multi-region deployments, engineers face an uncomfortable binary choice between <strong>strict linearizability</strong> (which requires a cross-ocean Raft or Paxos round-trip on every read) and <strong>eventual consistency</strong> (which risks serving stale state minutes after a write has committed). Neither extreme matches how interactive applications actually behave.
+              In this illustrative design, engineers compare a local snapshot read with a quorum fallback. The intended reader is a storage engineer deciding which read path is eligible. The example does not establish a general latency or consistency guarantee for distributed storage.
             </p>
             <p class="font-body">
-              What users and downstream microservices almost always require is <em>read-your-own-writes monotonicity</em> paired with a deterministic upper bound on staleness<sup class="font-mono-code text-[10px] text-[#D9381E] font-bold ml-0.5">[S1]</sup>. If a client mutates a permission graph in Singapore, any subsequent read carrying a session vector greater than or equal to <span class="inline-code">hlc_epoch: 109482910</span> must observe that mutation immediately, whereas unauthenticated public reads can safely read from an in-memory ring buffer within a <span class="inline-code-focal">2,000ms</span> lease window.
+              The example proposes <em>read-your-own-writes monotonicity</em> paired with a deterministic upper bound on staleness<sup class="font-mono-code text-[10px] text-[#D9381E] font-bold ml-0.5">[S1]</sup>. If a client mutates a permission graph in Singapore, any subsequent read carrying a session vector greater than or equal to <span class="inline-code">hlc_epoch: 109482910</span> must satisfy that session watermark before returning a local result, whereas unauthenticated public reads may attempt a read from an in-memory ring buffer within a <span class="inline-code-focal">2,000ms</span> lease window.
             </p>
 
-            <h3 class="font-display text-xl pt-2">Why Atomic Epoch Swapping Eliminates Mutex Stalls</h3>
+            <h3 class="font-display text-xl pt-2">Why This Example Separates Reads from Updates</h3>
             <p class="font-body">
-              Standard concurrent LRU caches protect their doubly-linked eviction lists with a read-write mutex or sharded spinlock. Under bursty traffic, cache-line bouncing across 64-core EPYC sockets degrades throughput even when 95% of requests are hits<sup class="font-mono-code text-[10px] text-[#0F766E] font-bold ml-0.5">[S2]</sup>. By replacing mutable linked lists with a pre-allocated ring of immutable snapshot slots, readers acquire data via a single <span class="inline-code">Acquire</span> atomic load without ever blocking a background WAL applier thread.
+              The synthetic comparison assumes a sharded LRU protected by a lock. Its illustrative contention values are design inputs, not measurements<sup class="font-mono-code text-[10px] text-[#0F766E] font-bold ml-0.5">[S2]</sup>. By replacing mutable linked lists with a pre-allocated ring of immutable snapshot slots, readers acquire data via a single <span class="inline-code">Acquire</span> atomic load in the proposed local read path; correctness and concurrency testing are outside this presentation example.
             </p>
           </div>
 
@@ -225,14 +222,14 @@
             <div class="p-3.5 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] space-y-1">
               <div class="font-mono-code text-[10px] font-semibold text-[#D9381E]">[S1] SIDENOTE · HLC EPOCHS</div>
               <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
-                Hybrid Logical Clocks combine physical NTP wall time (48 bits) with a monotonic logical counter (16 bits), preventing clock-skew anomalies across edge nodes.
+                Here HLC means hybrid logical clock. The example carries a session watermark; a concrete clock encoding and clock-skew guarantees are unspecified.
               </p>
             </div>
 
             <div class="p-3.5 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] space-y-1">
-              <div class="font-mono-code text-[10px] font-semibold text-[#0F766E]">[S2] BENCHMARK · CACHE BOUNCING</div>
+              <div class="font-mono-code text-[10px] font-semibold text-[#0F766E]">[S2] SYNTHETIC BENCHMARK EXAMPLE</div>
               <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
-                Removing the <code class="font-mono-code text-[11px]">RwLock</code> on L1 metadata lookups reduced CPU L3 cache misses from 18.4% to 1.9% at 100k RPS.
+                Synthetic L3 cache-miss fractions: 18.4% for the comparator and 1.9% for the proposed path at an assumed 100k requests/s. Source: fictional specimen inputs; period, sample size, and uncertainty unknown.
               </p>
             </div>
           </div>
@@ -255,7 +252,7 @@
 
             <div class="callout-verified p-4 space-y-1.5">
               <div class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#0F766E]">
-                Verified Invariant · Monotonicity
+                Proposed Rule · Session Watermark
               </div>
               <p class="font-body text-sm m-0 text-[#141413]">
                 A client presenting <span class="inline-code">client_hlc &gt; slot_hlc</span> bypasses the ring buffer and triggers an asynchronous fast-forward barrier.
@@ -267,7 +264,7 @@
                 Operational Note · Memory Budget
               </div>
               <p class="font-body text-sm m-0 text-[#292524]">
-                Each 64-slot ring buffer consumes a fixed <strong>512 MB</strong> hugepage allocation per worker process with zero heap fragmentation.
+                The example configuration assigns <strong>512 MB</strong> per worker to a 64-slot ring. Allocation overhead and fragmentation have not been measured.
               </p>
             </div>
           </div>
@@ -275,7 +272,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
             <div class="p-4 rounded-[4px] bg-[#FAFDFB] border border-[#0F766E] space-y-2">
               <div class="flex items-center justify-between">
-                <span class="badge-teal">RECOMMENDED PATTERN</span>
+                <span class="badge-teal">ILLUSTRATIVE RECOMMENDATION</span>
                 <span class="font-mono-code text-[11px] text-[#0F766E]">Wait-Free Read</span>
               </div>
               <p class="font-body text-sm m-0 text-[#141413]">
@@ -303,201 +300,167 @@
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#CBD5E1] pb-4">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 03 · 4px Grid &amp; Orthogonal Routing</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">2. Editorial SVG Diagram Suite</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">03. Editorial SVG Diagram Suite</h2>
           </div>
 
           <div class="inline-flex rounded-[4px] bg-[#E4E4E7] p-1 border border-[#CBD5E1] font-ui text-xs" id="diagramTabs">
             <button data-diag="topology" class="px-3 py-1.5 rounded-[3px] bg-white text-[#141413] font-semibold border border-[#CBD5E1]">
-              2.1 System Topology
+              3.1 System Topology
             </button>
             <button data-diag="sequence" class="px-3 py-1.5 rounded-[3px] text-[#57534E] hover:text-[#141413]">
-              2.2 Sequence Lifeline
+              3.2 Sequence Lifeline
             </button>
             <button data-diag="state" class="px-3 py-1.5 rounded-[3px] text-[#57534E] hover:text-[#141413]">
-              2.3 Lease State Machine
+              3.3 Lease State Machine
             </button>
           </div>
         </div>
 
+        <p class="font-ui text-sm">Choose topology for structure, sequence for ordered messages, state for legal transitions, and a table for exact comparison. These are illustrative views, not production evidence. Each scrollable diagram has an independent text equivalent. Read the <a class="underline" href="./skills/swiss-atelier/references/diagrams.md">diagram method</a> for scope, notation, omissions, and reader checks.</p>
         <!-- TAB 1: SYSTEM TOPOLOGY DIAGRAM -->
         <div id="diagPanel-topology" class="space-y-3">
           <div class="flex flex-wrap items-center justify-between text-xs font-mono-code text-[#57534E]">
-            <span>FIG 2.1 — MULTI-TIER READ-THROUGH CACHE &amp; QUORUM STORAGE TOPOLOGY</span>
-            <span>DENSITY: 5 NODES · 4PX GRID</span>
+            <span>FIG 3.1 — MULTI-TIER READ-THROUGH CACHE &amp; QUORUM STORAGE TOPOLOGY</span>
+            <span>4 ENTITIES · CONCEPTUAL PROPOSAL</span>
           </div>
-          <div class="surface-well p-4 overflow-x-auto">
-            <svg viewBox="0 0 760 248" width="100%" height="248" role="img" aria-labelledby="topTitle" class="min-w-[620px]">
-              <title id="topTitle">System Topology Diagram</title>
+          <div class="surface-well p-4 atelier-diagram-scroll" tabindex="0" role="region" aria-label="Illustrative diagram, horizontally scrollable">
+                          <svg class="atelier-diagram" viewBox="0 0 960 360" role="img" aria-labelledby="topTitle" aria-describedby="topDesc topEquivalent">
+              <title id="topTitle">Proposed read topology: router selects ring or quorum</title>
+              <desc id="topDesc">Four conceptual entities; directed request and replication paths. Full relationship description follows.</desc>
               <defs>
-                <marker id="arrMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#57534E" />
-                </marker>
-                <marker id="arrOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D9381E" />
-                </marker>
-                <marker id="arrTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F766E" />
-                </marker>
+              <marker id="topArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 1 L 8 5 L 0 9 Z" fill="var(--ink-muted)"/>
+              </marker>
               </defs>
-
-              <line x1="0" y1="208" x2="760" y2="208" stroke="#CBD5E1" stroke-width="1" />
-
-              <!-- CONNECTORS -->
-              <path d="M 148 104 L 220 104" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#arrTeal)" />
-              <rect x="156" y="84" width="52" height="14" rx="2" fill="#E4E4E7" />
-              <text x="182" y="94" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">mTLS 1.3</text>
-
-              <path d="M 360 88 L 400 88 Q 408 88 408 80 L 408 52 Q 408 44 416 44 L 464 44" fill="none" stroke="#D9381E" stroke-width="2" marker-end="url(#arrOrange)" />
-              <rect x="376" y="22" width="76" height="14" rx="2" fill="#FFEDD5" />
-              <text x="414" y="32" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">94.6% HIT (1.8ms)</text>
-
-              <path d="M 360 120 L 400 120 Q 408 120 408 128 L 408 156 Q 408 164 416 164 L 464 164" fill="none" stroke="#57534E" stroke-width="1.25" stroke-dasharray="4 3" marker-end="url(#arrMuted)" />
-              <rect x="376" y="170" width="76" height="14" rx="2" fill="#E4E4E7" />
-              <text x="414" y="180" text-anchor="middle" class="font-mono-code" font-size="8" fill="#57534E">5.4% MISS (14ms)</text>
-
-              <path d="M 656 136 L 656 80" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#arrTeal)" />
-              <rect x="616" y="98" width="80" height="14" rx="2" fill="#CCFBF1" />
-              <text x="656" y="108" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">WAL STREAM &lt;8ms</text>
-
-              <!-- NODES -->
-              <rect x="20" y="76" width="128" height="56" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
-              <text x="32" y="94" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">INGRESS · CLIENT</text>
-              <text x="32" y="110" class="font-ui" font-size="12" font-weight="600" fill="#141413">Edge SDK Session</text>
-              <text x="32" y="124" class="font-mono-code" font-size="9" fill="#57534E">hlc_token: v4</text>
-
-              <rect x="224" y="76" width="136" height="56" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
-              <text x="236" y="94" class="font-mono-code" font-size="8" fill="#57534E">GATEWAY · ROUTER</text>
-              <text x="236" y="110" class="font-ui" font-size="12" font-weight="600" fill="#141413">Epoch Classifier</text>
-              <text x="236" y="124" class="font-mono-code" font-size="9" fill="#57534E">grpc :8443</text>
-
-              <rect x="468" y="16" width="268" height="60" rx="4" fill="#FFFFFF" stroke="#D9381E" stroke-width="2" />
-              <text x="480" y="34" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">FOCAL NODE · L1 WAIT-FREE CACHE</text>
-              <text x="480" y="50" class="font-ui" font-size="12" font-weight="600" fill="#141413">64-Slot Atomic Snapshot Ring Buffer</text>
-              <text x="480" y="66" class="font-mono-code" font-size="9" fill="#292524">Ordering::Acquire · lease_ttl=2000ms</text>
-
-              <rect x="468" y="136" width="268" height="56" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
-              <text x="480" y="154" class="font-mono-code" font-size="8" fill="#57534E">PRIMARY LEDGER · RAFT QUORUM</text>
-              <text x="480" y="170" class="font-ui" font-size="12" font-weight="600" fill="#141413">Regional Postgres + Logical WAL</text>
-              <text x="480" y="184" class="font-mono-code" font-size="9" fill="#57534E">synchronous_commit = local</text>
-
-              <!-- Legend Strip -->
-              <circle cx="28" cy="228" r="4" fill="#D9381E" />
-              <text x="38" y="231" class="font-mono-code" font-size="9" fill="#292524">Focal Hot Path (Wait-Free L1 Read)</text>
-              <circle cx="248" cy="228" r="4" fill="#0F766E" />
-              <text x="258" y="231" class="font-mono-code" font-size="9" fill="#292524">Verified Replication &amp; mTLS Ingress</text>
-              <circle cx="488" cy="228" r="4" fill="#57534E" />
-              <text x="498" y="231" class="font-mono-code" font-size="9" fill="#292524">Cold Quorum Fallback (HLC Barrier Miss)</text>
-            </svg>
+              <path d="M 224 168 L 324 168" fill="none" stroke="var(--ink-positive)" stroke-width="2"  marker-end="url(#topArrow)"/>
+              <path d="M 540 152 L 608 152 Q 616 152 616 144 L 616 88 Q 616 80 624 80 L 704 80" fill="none" stroke="var(--accent-primary)" stroke-width="2"  marker-end="url(#topArrow)"/>
+              <path d="M 540 184 L 608 184 Q 616 184 616 192 L 616 272 Q 616 280 624 280 L 704 280" fill="none" stroke="var(--ink-muted)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#topArrow)"/>
+              <path d="M 896 224 L 896 136" fill="none" stroke="var(--ink-positive)" stroke-width="2"  marker-end="url(#topArrow)"/>
+              <rect x="228" y="132" width="92" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="274.0" y="149" text-anchor="middle" class="diagram-positive">request</text>
+              <rect x="552" y="40" width="144" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="624.0" y="57" text-anchor="middle" class="diagram-focal">ring read</text>
+              <rect x="548" y="292" width="152" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="624.0" y="309" text-anchor="middle" class="">quorum fallback</text>
+              <rect x="812" y="164" width="128" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="876.0" y="181" text-anchor="middle" class="diagram-positive">WAL stream</text>
+              <rect x="24" y="112" width="200" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="40" y="144" class="diagram-heading">
+              <tspan x="40" dy="0">Edge SDK</tspan>
+              <tspan x="40" dy="24">session</tspan>
+              </text>
+              <text x="40" y="204">Client HLC token</text>
+              <rect x="324" y="112" width="216" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="340" y="144" class="diagram-heading">
+              <tspan x="340" dy="0">Epoch classifier</tspan>
+              </text>
+              <text x="340" y="204">Router · gRPC :8443</text>
+              <rect x="704" y="24" width="232" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--accent-primary)"/>
+              <text x="720" y="56" class="diagram-heading">
+              <tspan x="720" dy="0">Snapshot ring</tspan>
+              <tspan x="720" dy="24">buffer</tspan>
+              </text>
+              <text x="720" y="116">64 slots · lease 2,000ms</text>
+              <rect x="704" y="224" width="232" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="720" y="256" class="diagram-heading">
+              <tspan x="720" dy="0">Regional quorum</tspan>
+              <tspan x="720" dy="24">and WAL</tspan>
+              </text>
+              <text x="720" y="316">Conceptual ledger</text>
+              </svg>
           </div>
+<div id="topEquivalent" class="font-ui text-sm space-y-2"><p><strong>Illustrative proposal, conceptual scope.</strong> Four boxes are the Edge SDK session, epoch-classifier router, snapshot ring buffer, and regional quorum/WAL ledger.</p><ul class="list-disc pl-5"><li>SDK → router: sends a read request with its session HLC token over the illustrated mTLS ingress.</li><li>Router → ring: attempts the focal read when the lease and session watermark permit it.</li><li>Router → quorum: dashed cold-path fallback when the ring cannot satisfy the read.</li><li>Quorum/WAL → ring: streams updates into snapshot slots.</li></ul><p>Orange identifies the focal ring path; teal identifies the proposed ingress/update roles, with no verification claim. Solid arrows show requests or replication; the dashed arrow is fallback. Box size fits labels; the well is decorative, not a trust or deployment boundary. Responses, replication failure, and internals are omitted. Takeaway: the router chooses the ring or quorum; this is not a deployed-system inventory.</p></div>
         </div>
 
         <!-- TAB 2: SEQUENCE LIFELINE DIAGRAM -->
         <div id="diagPanel-sequence" class="hidden space-y-3">
           <div class="flex flex-wrap items-center justify-between text-xs font-mono-code text-[#57534E]">
-            <span>FIG 2.2 — REQUEST TIMELINE &amp; EPOCH VERIFICATION SEQUENCE</span>
-            <span>TOTAL ELAPSED: 1.84 MS</span>
+            <span>FIG 3.2 — REQUEST TIMELINE &amp; EPOCH VERIFICATION SEQUENCE</span>
+            <span>ORDER ONLY · NO TIME SCALE</span>
           </div>
-          <div class="surface-well p-4 overflow-x-auto">
-            <svg viewBox="0 0 760 248" width="100%" height="248" role="img" aria-labelledby="seqTitle" class="min-w-[620px]">
-              <title id="seqTitle">Sequence Lifeline Diagram</title>
+          <div class="surface-well p-4 atelier-diagram-scroll" tabindex="0" role="region" aria-label="Illustrative diagram, horizontally scrollable">
+                          <svg class="atelier-diagram" viewBox="0 0 960 408" role="img" aria-labelledby="seqTitle" aria-describedby="seqDesc seqEquivalent">
+              <title id="seqTitle">Illustrative successful ring read after epoch publication</title>
+              <desc id="seqDesc">Time proceeds top to bottom; solid arrows are operations, dashed arrows returns; spacing is not elapsed time.</desc>
               <defs>
-                <marker id="seqOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D9381E" />
-                </marker>
-                <marker id="seqTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F766E" />
-                </marker>
+              <marker id="seqArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 1 L 8 5 L 0 9 Z" fill="var(--ink-muted)"/>
+              </marker>
               </defs>
-
-              <line x1="100" y1="52" x2="100" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 4" />
-              <line x1="300" y1="52" x2="300" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 4" />
-              <line x1="500" y1="52" x2="500" y2="220" stroke="#D9381E" stroke-width="1.5" stroke-dasharray="4 4" />
-              <line x1="680" y1="52" x2="680" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 4" />
-
-              <rect x="36" y="16" width="128" height="36" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
-              <text x="100" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#141413">Client SDK</text>
-
-              <rect x="236" y="16" width="128" height="36" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
-              <text x="300" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#141413">Edge Router</text>
-
-              <rect x="428" y="16" width="144" height="36" rx="4" fill="#FFFFFF" stroke="#D9381E" stroke-width="2" />
-              <text x="500" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#D9381E">Ring Buffer (L1)</text>
-
-              <rect x="616" y="16" width="128" height="36" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
-              <text x="680" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#57534E">WAL Applier</text>
-
-              <path d="M 680 80 L 508 80" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#seqTeal)" />
-              <rect x="536" y="62" width="112" height="14" rx="2" fill="#CCFBF1" />
-              <text x="592" y="72" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">1. store(epoch_42)</text>
-
-              <path d="M 100 112 L 292 112" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#seqTeal)" />
-              <rect x="136" y="94" width="124" height="14" rx="2" fill="#E4E4E7" />
-              <text x="198" y="104" text-anchor="middle" class="font-mono-code" font-size="8" fill="#141413">2. GET /state (min_hlc=41)</text>
-
-              <path d="M 300 144 L 492 144" fill="none" stroke="#D9381E" stroke-width="2" marker-end="url(#seqOrange)" />
-              <rect x="332" y="126" width="136" height="14" rx="2" fill="#FFEDD5" />
-              <text x="400" y="136" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">3. load_acquire(slot_42)</text>
-
-              <path d="M 500 176 L 308 176" fill="none" stroke="#D9381E" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#seqOrange)" />
-              <rect x="340" y="158" width="120" height="14" rx="2" fill="#E4E4E7" />
-              <text x="400" y="168" text-anchor="middle" class="font-mono-code" font-size="8" fill="#141413">4. Arc&lt;Page&gt; (0.12ms)</text>
-
-              <path d="M 300 204 L 108 204" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#seqTeal)" />
-              <rect x="140" y="186" width="120" height="14" rx="2" fill="#CCFBF1" />
-              <text x="200" y="196" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">5. 200 OK (1.84ms total)</text>
-            </svg>
+              <line x1="112" y1="72" x2="112" y2="384" stroke="var(--ink-muted)" stroke-dasharray="4 4"/>
+              <line x1="352" y1="72" x2="352" y2="384" stroke="var(--ink-muted)" stroke-dasharray="4 4"/>
+              <line x1="592" y1="72" x2="592" y2="384" stroke="var(--ink-muted)" stroke-dasharray="4 4"/>
+              <line x1="832" y1="72" x2="832" y2="384" stroke="var(--ink-muted)" stroke-dasharray="4 4"/>
+              <path d="M 832 120 L 592 120" fill="none" stroke="var(--ink-muted)" stroke-width="2"  marker-end="url(#seqArrow)"/>
+              <rect x="600" y="88" width="224" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="712.0" y="105" text-anchor="middle" class="diagram-positive">1. publish epoch 42</text>
+              <path d="M 112 180 L 352 180" fill="none" stroke="var(--ink-muted)" stroke-width="2"  marker-end="url(#seqArrow)"/>
+              <rect x="120" y="148" width="224" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="232.0" y="165" text-anchor="middle" class="">2. GET · min HLC 41</text>
+              <path d="M 352 240 L 592 240" fill="none" stroke="var(--ink-muted)" stroke-width="2"  marker-end="url(#seqArrow)"/>
+              <rect x="360" y="208" width="224" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="472.0" y="225" text-anchor="middle" class="diagram-focal">3. acquire slot 42</text>
+              <path d="M 592 300 L 352 300" fill="none" stroke="var(--ink-muted)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#seqArrow)"/>
+              <rect x="360" y="268" width="224" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="472.0" y="285" text-anchor="middle" class="">4. return page</text>
+              <path d="M 352 360 L 112 360" fill="none" stroke="var(--ink-muted)" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#seqArrow)"/>
+              <rect x="120" y="328" width="224" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="232.0" y="345" text-anchor="middle" class="diagram-positive">5. return 200 OK</text>
+              <rect x="8" y="24" width="208" height="48" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="112" y="54" text-anchor="middle" class="diagram-heading">Client SDK</text>
+              <rect x="248" y="24" width="208" height="48" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="352" y="54" text-anchor="middle" class="diagram-heading">Edge router</text>
+              <rect x="488" y="24" width="208" height="48" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="592" y="54" text-anchor="middle" class="diagram-heading">Ring buffer</text>
+              <rect x="728" y="24" width="208" height="48" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="832" y="54" text-anchor="middle" class="diagram-heading">WAL applier</text>
+              </svg>
           </div>
+<div id="seqEquivalent" class="font-ui text-sm space-y-2"><p><strong>Illustrative successful read; four actors.</strong> Read top to bottom: (1) WAL applier publishes epoch 42 to the ring; (2) client sends GET with minimum HLC 41 to the router; (3) router acquires slot 42 from the ring; (4) ring returns a page to the router; (5) router returns 200 OK to the client.</p><p>Solid arrows are operations; dashed arrows are returns. Vertical lifelines identify actors and vertical spacing indicates order only, not elapsed time. Orange marks the focal operation; teal marks publication and the client result, not evidence of verification. Headers fit names; no ownership boundary is asserted. Retry, timeout, concurrent updates, and failure paths are omitted and unspecified. Takeaway: a published epoch can satisfy this example session watermark; no timing or failure guarantee follows.</p></div>
         </div>
 
         <!-- TAB 3: LEASE STATE MACHINE DIAGRAM -->
         <div id="diagPanel-state" class="hidden space-y-3">
           <div class="flex flex-wrap items-center justify-between text-xs font-mono-code text-[#57534E]">
-            <span>FIG 2.3 — LEASE VALIDITY &amp; CIRCUIT-BREAKER STATE MACHINE</span>
-            <span>3 STATES · ORTHOGONAL TRANSITIONS</span>
+            <span>FIG 3.3 — LEASE VALIDITY &amp; CIRCUIT-BREAKER STATE MACHINE</span>
+            <span>3 STATES · SELECTED TRANSITIONS</span>
           </div>
-          <div class="surface-well p-4 overflow-x-auto">
-            <svg viewBox="0 0 760 220" width="100%" height="220" role="img" aria-labelledby="stTitle" class="min-w-[620px]">
-              <title id="stTitle">Lease State Machine Diagram</title>
+          <div class="surface-well p-4 atelier-diagram-scroll" tabindex="0" role="region" aria-label="Illustrative diagram, horizontally scrollable">
+                          <svg class="atelier-diagram" viewBox="0 0 960 344" role="img" aria-labelledby="stTitle" aria-describedby="stDesc stEquivalent">
+              <title id="stTitle">Selected lease transitions from active through eviction to renewal</title>
+              <desc id="stDesc">Three selected transitions; age means time since the last renewal. Complete staged path and omissions follow.</desc>
               <defs>
-                <marker id="stOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D9381E" />
-                </marker>
-                <marker id="stTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F766E" />
-                </marker>
-                <marker id="stMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#57534E" />
-                </marker>
+              <marker id="stArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M 0 1 L 8 5 L 0 9 Z" fill="var(--ink-muted)"/>
+              </marker>
               </defs>
-
-              <path d="M 212 88 L 296 88" fill="none" stroke="#D9381E" stroke-width="2" marker-end="url(#stOrange)" />
-              <rect x="218" y="68" width="72" height="14" rx="2" fill="#FFEDD5" />
-              <text x="254" y="78" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">lag &gt; 1500ms</text>
-
-              <path d="M 468 88 L 552 88" fill="none" stroke="#57534E" stroke-width="1.5" marker-end="url(#stMuted)" />
-              <rect x="474" y="68" width="72" height="14" rx="2" fill="#E4E4E7" />
-              <text x="510" y="78" text-anchor="middle" class="font-mono-code" font-size="8" fill="#57534E">ttl &gt; 2000ms</text>
-
-              <path d="M 640 120 L 640 176 Q 640 184 632 184 L 124 184 Q 116 184 116 176 L 116 124" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#stTeal)" />
-              <rect x="288" y="166" width="184" height="14" rx="2" fill="#CCFBF1" />
-              <text x="380" y="176" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">WAL Quorum Catch-Up Verified (hlc_sync)</text>
-
-              <rect x="28" y="56" width="184" height="64" rx="4" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.5" />
-              <text x="40" y="74" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">STATE 01 · NOMINAL</text>
-              <text x="40" y="92" class="font-ui" font-size="12" font-weight="600" fill="#141413">Lease Active (Wait-Free)</text>
-              <text x="40" y="108" class="font-mono-code" font-size="9" fill="#57534E">Serve 100% from L1 Ring</text>
-
-              <rect x="300" y="56" width="168" height="64" rx="4" fill="#FFFFFF" stroke="#D9381E" stroke-width="2" />
-              <text x="312" y="74" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">STATE 02 · FOCAL ALERT</text>
-              <text x="312" y="92" class="font-ui" font-size="12" font-weight="600" fill="#141413">Soft-Grace Hedging</text>
-              <text x="312" y="108" class="font-mono-code" font-size="9" fill="#292524">Async Quorum Prefetch</text>
-
-              <rect x="556" y="56" width="176" height="64" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
-              <text x="568" y="74" class="font-mono-code" font-size="8" fill="#57534E">STATE 03 · BYPASS</text>
-              <text x="568" y="92" class="font-ui" font-size="12" font-weight="600" fill="#141413">Lease Evicted</text>
-              <text x="568" y="108" class="font-mono-code" font-size="9" fill="#57534E">Direct Quorum Read</text>
-            </svg>
+              <path d="M 264 168 L 364 168" fill="none" stroke="var(--accent-primary)" stroke-width="2"  marker-end="url(#stArrow)"/>
+              <path d="M 604 168 L 704 168" fill="none" stroke="var(--ink-muted)" stroke-width="2"  marker-end="url(#stArrow)"/>
+              <path d="M 824 224 L 824 296 Q 824 304 816 304 L 152 304 Q 144 304 144 296 L 144 224" fill="none" stroke="var(--ink-positive)" stroke-width="2"  marker-end="url(#stArrow)"/>
+              <rect x="220" y="72" width="188" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="314.0" y="89" text-anchor="middle" class="diagram-focal">age &gt; 1,500ms</text>
+              <rect x="560" y="72" width="188" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="654.0" y="89" text-anchor="middle" class="">age &gt; 2,000ms</text>
+              <rect x="300" y="276" width="400" height="24" rx="2" fill="var(--bg-subtle)"/>
+              <text x="500.0" y="293" text-anchor="middle" class="diagram-positive">catch-up confirmed / renew lease</text>
+              <rect x="24" y="112" width="240" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--ink-positive)"/>
+              <text x="40" y="144" class="diagram-heading">
+              <tspan x="40" dy="0">Lease active</tspan>
+              </text>
+              <text x="40" y="204">Eligible ring reads</text>
+              <rect x="364" y="112" width="240" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--accent-primary)"/>
+              <text x="380" y="144" class="diagram-heading">
+              <tspan x="380" dy="0">Soft grace</tspan>
+              </text>
+              <text x="380" y="204">Prefetch quorum</text>
+              <rect x="704" y="112" width="232" height="112" rx="4" fill="var(--bg-surface)" stroke="var(--ink-muted)"/>
+              <text x="720" y="144" class="diagram-heading">
+              <tspan x="720" dy="0">Lease evicted</tspan>
+              </text>
+              <text x="720" y="204">Direct quorum reads</text>
+              </svg>
           </div>
+<div id="stEquivalent" class="font-ui text-sm space-y-2"><p><strong>Illustrative selected transitions for one lease.</strong> Age is milliseconds since its last renewal. The staged path shown is: Active → Soft grace when age exceeds 1,500ms, with quorum prefetch; Soft grace → Evicted when age exceeds 2,000ms, with direct quorum reads; Evicted → Active when catch-up is confirmed and the lease renewed.</p><p>Exactly 1,500ms does not trigger soft grace; exactly 2,000ms does not trigger this hard eviction rule. Snapshot-lag acceptance is a separate &lt;1,800ms target; a live lease alone is insufficient. Arrows assert only these selected transitions, not a complete legal-state model. Startup, a direct Active → Evicted jump, renewal while in grace, and failure of catch-up are omitted and unspecified. Orange highlights grace; teal marks renewal, not empirical verification. Boxes name lease states; the frame is decorative. Takeaway: grace precedes eviction in this staged path, and confirmed catch-up permits renewal.</p></div>
         </div>
       </section>
 
@@ -508,7 +471,7 @@
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#CBD5E1] pb-4">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 04 · Semantic Syntax Highlighting</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">3. Syntax-Highlighted Code &amp; Invariant Callouts</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">04. Syntax-Highlighted Code &amp; Invariant Callouts</h2>
           </div>
 
           <div class="flex flex-wrap items-center gap-2">
@@ -523,6 +486,7 @@
           </div>
         </div>
 
+        <div class="atelier-callout-note font-ui text-sm" id="example-parameters"><strong>Illustrative parameters, not measured guarantees.</strong> Lease age means elapsed time since renewal: age &gt;1,500ms starts soft hedging; age &gt;2,000ms expires the lease (at exactly 2,000ms it has not expired). Replication lag is a separate quantity: the SQL acceptance target is &lt;1,800ms, not a lease duration. The Rust excerpt checks lease validity and the session watermark; it does not implement the complete lag/hedge policy. These fragments are incomplete teaching examples, not a tested storage engine.</div>
         <!-- TAB 1: RUST SYNTAX-HIGHLIGHTED CODE BLOCK -->
         <div id="codePanel-rust" class="rounded-[4px] border border-[#CBD5E1] overflow-hidden bg-[#FFFFFF]">
           <div class="px-4 py-2 bg-[#E4E4E7] border-b border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-mono-code text-[11px] text-[#57534E]">
@@ -538,7 +502,7 @@
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">03</span><span class="syn-kw">pub fn</span> <span class="syn-fn">read_monotonic</span><span class="syn-op">(&amp;</span><span class="syn-kw">self</span><span class="syn-op">,</span> min_hlc<span class="syn-op">:</span> <span class="syn-ty">HlcTimestamp</span><span class="syn-op">) -&gt;</span> <span class="syn-ty">Result</span><span class="syn-op">&lt;</span><span class="syn-ty">Arc</span><span class="syn-op">&lt;</span><span class="syn-ty">SnapshotPage</span><span class="syn-op">&gt;,</span> <span class="syn-ty">ReadFallback</span><span class="syn-op">&gt; {</span></div>
             <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">04</span>    <span class="syn-kw">let</span> head_idx <span class="syn-op">=</span> <span class="syn-kw">self</span><span class="syn-op">.</span>active_epoch<span class="syn-op">.</span><span class="syn-fn">load</span><span class="syn-op">(</span><span class="syn-ty">Ordering</span><span class="syn-op">::</span><span class="syn-cn">Acquire</span><span class="syn-op">) &amp;</span> <span class="syn-cn">RING_MASK</span><span class="syn-op">;</span> <span class="syn-cm">// FOCAL: Zero-lock atomic load</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">05</span>    <span class="syn-kw">let</span> slot <span class="syn-op">=</span> <span class="syn-kw">unsafe</span> <span class="syn-op">{</span> <span class="syn-kw">self</span><span class="syn-op">.</span>slots<span class="syn-op">.</span><span class="syn-fn">get_unchecked</span><span class="syn-op">(</span>head_idx<span class="syn-op">) }.</span><span class="syn-fn">load</span><span class="syn-op">();</span></div>
-            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">06</span>    <span class="syn-kw">if</span> slot<span class="syn-op">.</span><span class="syn-fn">lease_valid_until</span><span class="syn-op">() &gt;=</span> <span class="syn-ty">Instant</span><span class="syn-op">::</span><span class="syn-fn">now</span><span class="syn-op">() &amp;&amp;</span> slot<span class="syn-op">.</span>hlc_watermark <span class="syn-op">&gt;=</span> min_hlc <span class="syn-op">{</span> <span class="syn-cm">// VERIFIED: SLA invariant</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">06</span>    <span class="syn-kw">if</span> slot<span class="syn-op">.</span><span class="syn-fn">lease_valid_until</span><span class="syn-op">() &gt;=</span> <span class="syn-ty">Instant</span><span class="syn-op">::</span><span class="syn-fn">now</span><span class="syn-op">() &amp;&amp;</span> slot<span class="syn-op">.</span>hlc_watermark <span class="syn-op">&gt;=</span> min_hlc <span class="syn-op">{</span> <span class="syn-cm">// Proposed lease and session checks</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">07</span>        <span class="syn-kw">return</span> <span class="syn-cn">Ok</span><span class="syn-op">(</span><span class="syn-ty">Arc</span><span class="syn-op">::</span><span class="syn-fn">clone</span><span class="syn-op">(&amp;</span>slot<span class="syn-op">.</span>page<span class="syn-op">));</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">08</span>    <span class="syn-op">}</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">09</span>    <span class="syn-cn">Err</span><span class="syn-op">(</span><span class="syn-ty">ReadFallback</span><span class="syn-op">::</span><span class="syn-cn">RouteToQuorum</span> <span class="syn-op">{</span> region<span class="syn-op">:</span> <span class="syn-st">"ap-southeast-1"</span><span class="syn-op">,</span> observed_hlc<span class="syn-op">:</span> slot<span class="syn-op">.</span>hlc_watermark <span class="syn-op">})</span></div>
@@ -553,7 +517,7 @@
               <span class="w-2 h-2 rounded-full bg-[#0F766E]"></span>
               <span class="font-semibold text-[#141413]">config/pop-sin-01/edge_pop.toml</span>
             </div>
-            <span>TOML v1.0 · Production Topology Profile</span>
+            <span>TOML v1.0 · Illustrative Topology Profile</span>
           </div>
           <div class="py-3 overflow-x-auto font-mono-code text-xs leading-[1.7] text-[#141413]" id="rawCodeToml">
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">01</span><span class="syn-cm"># Regional Edge POP Configuration — Singapore (sin-01)</span></div>
@@ -562,8 +526,8 @@
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">04</span>slot_count <span class="syn-op">=</span> <span class="syn-cn">64</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">05</span>hugepage_size_mb <span class="syn-op">=</span> <span class="syn-cn">512</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">06</span>zero_copy_mmap <span class="syn-op">=</span> <span class="syn-cn">true</span></div>
-            <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">07</span>max_lease_staleness_ms <span class="syn-op">=</span> <span class="syn-cn">2000</span>  <span class="syn-cm"># FOCAL: Hard upper bound before quorum fallback</span></div>
-            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">08</span>soft_hedge_threshold_ms <span class="syn-op">=</span> <span class="syn-cn">1500</span> <span class="syn-cm"># VERIFIED: Trigger async background WAL prefetch</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">07</span>max_lease_age_ms <span class="syn-op">=</span> <span class="syn-cn">2000</span>  <span class="syn-cm"># FOCAL: Hard upper bound before quorum fallback</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">08</span>soft_hedge_threshold_ms <span class="syn-op">=</span> <span class="syn-cn">1500</span> <span class="syn-cm"># Proposed soft-hedge threshold</span></div>
           </div>
         </div>
 
@@ -577,12 +541,12 @@
             <span>PostgreSQL 17 · Quorum Watermark Audit</span>
           </div>
           <div class="py-3 overflow-x-auto font-mono-code text-xs leading-[1.7] text-[#141413]" id="rawCodeSql">
-            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">01</span><span class="syn-cm">-- Verify that regional WAL replication lag stays within the 1,800ms SLA window</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">01</span><span class="syn-cm">-- Verify that regional WAL replication lag stays within the illustrative &lt;1,800ms lag target</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">02</span><span class="syn-kw">SELECT</span> pop_region<span class="syn-op">,</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">03</span>       <span class="syn-fn">MAX</span><span class="syn-op">(</span>hlc_epoch<span class="syn-op">)</span> <span class="syn-kw">AS</span> latest_epoch<span class="syn-op">,</span></div>
             <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">04</span>       <span class="syn-fn">PERCENTILE_CONT</span><span class="syn-op">(</span><span class="syn-cn">0.99</span><span class="syn-op">)</span> <span class="syn-kw">WITHIN GROUP</span> <span class="syn-op">(</span><span class="syn-kw">ORDER BY</span> repl_lag_ms<span class="syn-op">)</span> <span class="syn-kw">AS</span> p99_lag_ms</div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">05</span><span class="syn-kw">FROM</span>   edge_lease_telemetry</div>
-            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">06</span><span class="syn-kw">WHERE</span>  pop_region <span class="syn-op">=</span> <span class="syn-st">'ap-southeast-1'</span> <span class="syn-kw">AND</span> lease_status <span class="syn-op">=</span> <span class="syn-st">'VERIFIED'</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">06</span><span class="syn-kw">WHERE</span>  pop_region <span class="syn-op">=</span> <span class="syn-st">'ap-southeast-1'</span> <span class="syn-kw">AND</span> lease_status <span class="syn-op">=</span> <span class="syn-st">'ILLUSTRATIVE'</span></div>
             <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">07</span><span class="syn-kw">GROUP BY</span> pop_region <span class="syn-kw">HAVING</span> <span class="syn-fn">MAX</span><span class="syn-op">(</span>repl_lag_ms<span class="syn-op">) &lt;</span> <span class="syn-cn">1800</span><span class="syn-op">;</span></div>
           </div>
         </div>
@@ -597,7 +561,7 @@
             <span><span class="syn-cn">CONSTANT/42</span> (#B45309)</span>
             <span><span class="syn-st">"string"</span> (#15803D)</span>
             <span><span class="syn-at">#[attribute]</span> (#6D28D9)</span>
-            <span><span class="syn-cm">// comment</span> (#78716C)</span>
+            <span><span class="syn-cm">// comment</span> (--ink-code #57534E)</span>
           </div>
         </div>
       </section>
@@ -609,7 +573,7 @@
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#CBD5E1] pb-4">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 05 · Decision Analysis</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">4. Quantitative Trade-Off Matrix &amp; Decision Log</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">05. Quantitative Trade-Off Matrix &amp; Decision Log</h2>
           </div>
 
           <div class="inline-flex rounded-[4px] bg-[#E4E4E7] p-1 border border-[#CBD5E1] font-ui text-xs" id="matrixFilterGroup">
@@ -621,7 +585,7 @@
 
         <div class="surface-card overflow-x-auto">
           <table class="w-full text-left border-collapse font-ui text-xs sm:text-sm">
-            <caption class="sr-only">Illustrative comparison of read strategies, latency, staleness, and adoption status.</caption>
+            <caption class="p-3 text-left">Synthetic read-strategy comparison. Latencies are ms; RPS means requests/s. Source: fictional specimen inputs. Observation period, sample sizes, and uncertainty unknown; statuses describe the illustrative proposal.</caption>
             <thead>
               <tr class="bg-[#E4E4E7] border-b border-[#CBD5E1]">
                 <th class="py-3 px-4 font-semibold text-[#141413]">Architecture Strategy</th>
@@ -636,7 +600,7 @@
                 <td class="py-3 px-4 font-semibold text-[#141413]">Atomic Ring Buffer + HLC Lease</td>
                 <td class="py-3 px-4 font-mono-code font-semibold text-[#D9381E]">0.4 ms / 1.84 ms</td>
                 <td class="py-3 px-4 font-mono-code text-[#0F766E]">450,000 RPS</td>
-                <td class="py-3 px-4 text-[#292524]">Session Monotonic (&lt;2s bound)</td>
+                <td class="py-3 px-4 text-[#292524]">Session watermark + lease check</td>
                 <td class="py-3 px-4"><span class="badge-orange">ADOPTED PRIMARY</span></td>
               </tr>
               <tr data-status="adopted">
@@ -675,7 +639,7 @@
               <span class="font-mono-code text-xs text-[#D9381E]">[−]</span>
             </button>
             <div id="adr-1" class="px-4 pb-4 pt-1 border-t border-[#CBD5E1] font-body text-sm text-[#292524]">
-              Telemetry across 140M user sessions showed that 99.4% of cross-tab state transitions occur either within the same HTTP/2 connection (handled via HLC session tokens) or more than 3 seconds apart. A 2,000ms lease window captures 94.6% of global read traffic while keeping worst-case unauthenticated staleness imperceptible.
+              This illustrative proposal chooses a 2,000ms lease age limit independently from its &lt;1,800ms replication-lag target. No session telemetry, observation period, or evidence of perceptual acceptability is supplied. The synthetic 94.6% hit fraction is an input for demonstrating a component, not evidence for this limit.
             </div>
           </div>
 
@@ -685,7 +649,7 @@
               <span class="font-mono-code text-xs text-[#57534E]">[+]</span>
             </button>
             <div id="adr-2" class="hidden px-4 pb-4 pt-1 border-t border-[#CBD5E1] font-body text-sm text-[#292524]">
-              When an edge POP loses its logical WAL stream from the primary quorum, the local monotonic clock automatically trips the 1,500ms soft-hedge threshold and begins routing reads directly over the backup backbone link before the 2,000ms hard eviction expires.
+              In the staged example, lease age &gt;1,500ms starts soft-grace quorum prefetch; age &gt;2,000ms evicts the lease and routes reads to quorum. This selected path does not specify every jump, retry, or partition-recovery condition. Those require domain evidence before implementation.
             </div>
           </div>
         </div>
@@ -697,13 +661,13 @@
       <section id="sec-timeline" class="surface-card p-6 sm:p-10 space-y-6">
         <div class="border-b border-[#CBD5E1] pb-4">
           <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 06 · Spatial &amp; Temporal Models</span>
-          <h2 class="font-display text-2xl sm:text-3xl mt-1">5. Rollout Timeline &amp; 2x2 Trade-Off Quadrant</h2>
+          <h2 class="font-display text-2xl sm:text-3xl mt-1">06. Rollout Timeline &amp; 2x2 Trade-Off Quadrant</h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div class="lg:col-span-6 space-y-4">
             <div class="font-mono-code text-[11px] uppercase tracking-wider text-[#57534E] font-semibold">
-              3-Stage Production Cutover Sequence
+              Illustrative 3-Stage Cutover Proposal
             </div>
 
             <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#0F766E] flex gap-4">
@@ -711,7 +675,7 @@
               <div class="space-y-1">
                 <div class="flex items-center gap-2">
                   <span class="font-ui text-sm font-semibold text-[#141413]">Shadow Ring Verification</span>
-                  <span class="badge-teal">COMPLETED</span>
+                  <span class="badge-teal">PROPOSED CHECK</span>
                 </div>
                 <p class="font-body text-sm m-0">
                   Mirror 10% of production reads to the L1 ring buffer asynchronously and log any HLC watermark divergence without serving ring responses.
@@ -724,10 +688,10 @@
               <div class="space-y-1">
                 <div class="flex items-center gap-2">
                   <span class="font-ui text-sm font-semibold text-[#141413]">Canary POP Cutover (sin-01, nrt-01)</span>
-                  <span class="badge-orange">ACTIVE STAGE</span>
+                  <span class="badge-orange">PROPOSED CANARY</span>
                 </div>
                 <p class="font-body text-sm m-0">
-                  Enable wait-free L1 serving for read-heavy endpoints with automatic fallback on <span class="inline-code">lease_ttl &gt; 2000ms</span>.
+                  Enable wait-free L1 serving for read-heavy endpoints with automatic fallback on <span class="inline-code">lease_age &gt; 2000ms</span>.
                 </p>
               </div>
             </div>
@@ -737,10 +701,10 @@
               <div class="space-y-1">
                 <div class="flex items-center gap-2">
                   <span class="font-ui text-sm font-semibold text-[#141413]">Global Fleet Rollout (12 POPs)</span>
-                  <span class="badge-neutral">SCHEDULED NOV 2026</span>
+                  <span class="badge-neutral">ILLUSTRATIVE NEXT STAGE</span>
                 </div>
                 <p class="font-body text-sm m-0">
-                  Decommission legacy sharded RwLock LRU instances and reclaim 38% of edge compute vCPUs.
+                  Decommission legacy sharded RwLock LRU instances and evaluate any change in edge compute use; savings are unknown.
                 </p>
               </div>
             </div>
@@ -748,32 +712,26 @@
 
           <div class="lg:col-span-6 space-y-3">
             <div class="font-mono-code text-[11px] uppercase tracking-wider text-[#57534E] font-semibold">
-              2x2 Latency vs. Consistency Quadrant
+              Qualitative 2x2 Approach Map
             </div>
-            <div class="surface-well p-4">
-              <svg viewBox="0 0 360 260" width="100%" height="260" role="img" aria-labelledby="quadTitle">
-                <title id="quadTitle">2x2 Latency vs Consistency Quadrant</title>
-                <rect x="32" y="16" width="304" height="208" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" rx="4" />
-                <line x1="184" y1="16" x2="184" y2="224" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" />
-                <line x1="32" y1="120" x2="336" y2="120" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" />
-
-                <text x="184" y="246" text-anchor="middle" class="font-mono-code" font-size="9" fill="#57534E">CONSISTENCY GUARANTEE (EVENTUAL &rarr; MONOTONIC / LINEAR)</text>
-                <text x="14" y="120" text-anchor="middle" transform="rotate(-90 14 120)" class="font-mono-code" font-size="9" fill="#57534E">SPEED (LOW LATENCY &rarr;)</text>
-
-                <circle cx="268" cy="56" r="7" fill="#D9381E" />
-                <rect x="202" y="28" width="122" height="18" rx="3" fill="#FFEDD5" stroke="#D9381E" stroke-width="1" />
-                <text x="263" y="40" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">HLC Ring Buffer (1.8ms)</text>
-
-                <circle cx="96" cy="48" r="5" fill="#0F766E" />
-                <text x="96" y="66" text-anchor="middle" class="font-ui" font-size="10" font-weight="600" fill="#0F766E">Client L0 Cache</text>
-
-                <circle cx="112" cy="168" r="5" fill="#57534E" />
-                <text x="112" y="186" text-anchor="middle" class="font-ui" font-size="10" fill="#57534E">Sharded RwLock LRU</text>
-
-                <circle cx="284" cy="180" r="5" fill="#57534E" />
-                <text x="272" y="198" text-anchor="middle" class="font-ui" font-size="10" fill="#57534E">Global Raft Quorum</text>
+            <div class="surface-well p-4 atelier-diagram-scroll" tabindex="0" role="region" aria-label="Qualitative approach map, horizontally scrollable">
+                            <svg class="atelier-diagram" style="min-width:640px" viewBox="0 0 640 360" role="img" aria-labelledby="quadTitle" aria-describedby="quadDesc quadEquivalent">
+              <title id="quadTitle">Qualitative map of fictional serving approaches</title>
+              <desc id="quadDesc">Categorical placement, not measured distances or a ranking of consistency guarantees. Full equivalent follows.</desc>
+              <rect x="64" y="24" width="552" height="272" rx="4" fill="var(--bg-surface)" stroke="var(--border-color)"/>
+              <path d="M 340 24 V 296 M 64 160 H 616" stroke="var(--ink-muted)" stroke-dasharray="4 4"/>
+              <text x="340" y="328" text-anchor="middle">Local serving → quorum coordination</text>
+              <text x="24" y="160" transform="rotate(-90 24 160)" text-anchor="middle">Illustrative faster ↑ slower ↓</text>
+              <circle cx="176" cy="76" r="6" fill="var(--ink-positive)"/>
+              <text x="192" y="82">Client cache</text>
+              <circle cx="432" cy="76" r="6" fill="var(--accent-primary)"/>
+              <text x="448" y="82" class="diagram-focal">Ring + fallback</text>
+              <circle cx="112" cy="220" r="6" fill="var(--ink-muted)"/>
+              <text x="128" y="226">Sharded LRU</text>
+              <circle cx="432" cy="220" r="6" fill="var(--ink-muted)"/>
+              <text x="448" y="226">Raft quorum</text>
               </svg>
-            </div>
+            </div><p id="quadEquivalent" class="font-ui text-sm">Synthetic qualitative map: client cache is placed in faster/local serving, sharded LRU in slower/local serving, ring with quorum fallback in faster/coordinated serving, and Raft quorum in slower/coordinated serving. Points identify approaches; orange marks the focal proposal and teal the client-cache role, not verification. Positions are categorical illustration; distances and speed are unmeasured, with no time scale or ranked consistency guarantees. Frame and dashed quadrant lines organize categories and assert no security boundary. Takeaway: compare exact values and consistency categories in the table above; this map supplies no further quantitative evidence.</p>
           </div>
         </div>
       </section>
@@ -785,7 +743,7 @@
         <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-baseline justify-between gap-2">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 07 · Optical Scale</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">6. Typography &amp; Hierarchy Scale Specimen</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">07. Typography &amp; Hierarchy Scale Specimen</h2>
           </div>
           <span class="badge-teal">Fraunces + Literata 440 + Geist</span>
         </div>
@@ -817,7 +775,7 @@
               <div>Literata · 440 · 15.7px (0.98rem)</div>
             </div>
             <div class="sm:col-span-9 font-body max-w-[65ch]">
-              Set at optical weight 440 and 0.98rem with a 1.68 line-height, <strong>Literata</strong> delivers sturdy, even stems that never wash out on high-DPI monitors while matching the compact horizontal word density of a grotesque sans-serif.
+              <strong>Literata</strong> at weight 440, 0.98rem, and line-height 1.68 is the Swiss prose default. Adapt size and measure for the audience and surface, and verify loaded and fallback fonts; these settings are brand calibration, not a universal readability result.
             </div>
           </div>
 
@@ -827,7 +785,7 @@
               <div>Geist Sans · 400/600 · 13px</div>
             </div>
             <div class="sm:col-span-9 font-ui text-sm text-[#292524]">
-              <strong>Ring Buffer + Lease</strong> — 450,000 RPS sustained throughput across 12 regional edge POPs.
+              <strong>Ring Buffer + Lease</strong> — synthetic 450,000 requests/s across 12 regional edge POPs.
             </div>
           </div>
 
@@ -837,7 +795,7 @@
               <div>Geist Mono · 500 · 12px</div>
             </div>
             <div class="sm:col-span-9 font-mono-code text-xs">
-              <span class="syn-kw">let</span> epoch <span class="syn-op">=</span> <span class="syn-ty">Ordering</span><span class="syn-op">::</span><span class="syn-cn">Acquire</span><span class="syn-op">;</span> <span class="syn-cm">// p99_latency_ms = 1.84</span>
+              <span class="syn-kw">let</span> epoch <span class="syn-op">=</span> <span class="syn-ty">Ordering</span><span class="syn-op">::</span><span class="syn-cn">Acquire</span><span class="syn-op">;</span> <span class="syn-cm">// synthetic_p99_latency_ms = 1.84</span>
             </div>
           </div>
         </div>
@@ -850,7 +808,7 @@
         <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-center justify-between gap-2">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 08 · Production Token Spec</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">7. Surface, Signal &amp; Syntax Color Tokens</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">08. Surface, Signal &amp; Syntax Color Tokens</h2>
           </div>
           <span class="font-mono-code text-xs text-[#57534E]">Click any swatch to copy hex</span>
         </div>
@@ -867,7 +825,7 @@
         <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-center justify-between gap-4">
           <div>
             <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#0F766E] font-semibold">Module 09 · Machine-Readable Agent &amp; CDN Hub</span>
-            <h2 class="font-display text-2xl sm:text-3xl mt-1">8. Agent Skill, Repository Guides &amp; Cross-Site Imports</h2>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">09. Agent Skill, Repository Guides &amp; Cross-Site Imports</h2>
           </div>
           <div class="flex flex-wrap gap-2">
             <a href="./skills/swiss-atelier/SKILL.md" class="badge-teal hover:opacity-80">View Raw SKILL.md</a>
@@ -904,7 +862,7 @@
             </div>
             <div class="font-ui text-sm font-semibold text-[#141413]">Reusable SKILL.md</div>
             <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
-              Drop-in skill teaching any agent the 4-layer typography, Quiet Hairline rules, 4px SVG routing, and syntax palette.
+              Invoke explicitly with <code>$swiss-atelier</code> or “use Swiss Atelier.” Your requested format governs delivery; HTML requires an HTML or web-page request. Optional companions preserve Swiss identity.
             </p>
             <div class="pt-1 flex gap-2 font-mono-code text-[11px]">
               <a href="./skills/swiss-atelier/SKILL.md" class="text-[#0F766E] font-semibold underline">./skills/swiss-atelier/SKILL.md</a>
@@ -941,29 +899,28 @@
             </button>
           </div>
 
-          <pre id="agentBox-cdn" class="p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">&lt;!-- Option A: Import via GitHub + jsDelivr CDN --&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css" /&gt;
-&lt;script src="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.js" defer&gt;&lt;/script&gt;
+          <pre id="agentBox-cdn" class="p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">&lt;!-- Current-main recipe: use guidance and assets from the same deployed build --&gt;
+&lt;link rel="stylesheet" href="https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.css" /&gt;
+&lt;script src="https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.js" defer&gt;&lt;/script&gt;
 </pre>
 
-          <pre id="agentBox-skill" class="hidden p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">---
-name: swiss-atelier
-description: Design and build technical explainers, architecture decision records (ADRs), system documentation, editorial SVG diagrams, and web pages using the Swiss Atelier (v1.0.0) design system.
----
-# Swiss Atelier (v1.0.0) Quick Contract
-- Surfaces: Paper #F4F4F6 | Card #FFFFFF | Subtle Well #E4E4E7 | Hairline 1px solid #CBD5E1 (4px radius, 0 shadow)
-- Signals: Focal Zurich Orange #D9381E (max 1-2 per view) | Verified Deep Teal #0F766E | Muted Charcoal #57534E
-- Typography: Display 'Fraunces' (500, -0.02em) | Body 'Literata' (440, 0.98rem, lh 1.68, -0.005em) | UI 'Geist' | Mono 'Geist Mono'
-- Syntax Tokens: .syn-kw #B91C1C | .syn-ty #0F766E | .syn-fn #1D4ED8 | .syn-cn #B45309 | .syn-st #15803D | .syn-at #6D28D9 | .syn-cm #78716C
-- Diagrams: 4px grid, orthogonal right-angle paths with 8px rounded Q elbows, connectors drawn before nodes, opaque label masks.
-(Full SKILL.md available at ./skills/swiss-atelier/SKILL.md)</pre>
+          <pre id="agentBox-skill" class="hidden p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">Install the complete Swiss Atelier skill directory, including agents/openai.yaml and references/.
+https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md
 
-          <pre id="agentBox-prompt" class="hidden p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">Use the Swiss Atelier design system for this page.
+Invoke explicitly with $swiss-atelier or “use Swiss Atelier.” Installation does not activate it.
+Preserve the requested output format; create HTML only for an HTML/web-page request.
+Establish audience, task, evidence, and unknowns before styling.
+Choose a representation and define arrow/boundary semantics before drawing.
+Keep Swiss typography, surfaces, and contextual text colors.
+Use matching CSS, JS, tokens, templates, and guidance from one source.
+Check reader understanding, text equivalents, and rendered delivery.</pre>
+
+          <pre id="agentBox-prompt" class="hidden p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">Use Swiss Atelier to create an HTML page.
 1. Read the agent skill and token rules from: https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md (or ./skills/swiss-atelier/SKILL.md)
 2. Import the shared stylesheet and auto-highlighter runtime in &lt;head&gt;:
    &lt;link rel="stylesheet" href="https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.css" /&gt;
    &lt;script src="https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.js" defer&gt;&lt;/script&gt;
-3. Follow the 1px Quiet Hairline architecture, Fraunces 500 + Literata 440 + Geist typography, 4px orthogonal SVG diagram rules, and [data-atelier-code] syntax highlighting.</pre>
+3. Reuse supplied audience/task/evidence; keep unknowns visible. Read the linked authoring and diagram methods. Follow the 1px Quiet Hairline architecture, Fraunces 500 + Literata 440 + Geist typography, 4px orthogonal SVG diagram rules, and [data-atelier-code] syntax highlighting.</pre>
         </div>
       </section>
 

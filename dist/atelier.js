@@ -1,5 +1,5 @@
 /**
- * Swiss Atelier Design System Runtime (v1.0.0)
+ * Swiss Atelier Design System Runtime (v1.1.0)
  * Provides automatic client-side syntax highlighting, line-number gutters,
  * focal/verified line callouts and clipboard helpers.
  */
@@ -128,7 +128,7 @@
   }
 
   window.SwissAtelier = {
-    version: '1.0.0',
+    version: '1.1.0',
     initAll: initAll,
     highlightLine: highlightLine,
     copyToClipboard: copyToClipboard

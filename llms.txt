@@ -1,13 +1,19 @@
 # Swiss Atelier
 
-> A living information design system for technical documents, ADRs, and editorial diagrams. Fraunces 500 headings, Literata 440 prose, Geist UI/mono, hairline surfaces, and semantic orange/teal accents. Version 1.0.0.
+> A living information design system for technical documents, ADRs, and editorial diagrams. Fraunces 500 headings, Literata 440 prose, Geist UI/mono, hairline surfaces, and semantic orange/teal accents. Version 1.1.0.
 
 ## Start here
 
-- [Agent skill](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md): Use Swiss Atelier to create a page or diagram.
+- [Agent skill](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md): Explicit user invocation only via $swiss-atelier or a request to use Swiss Atelier. Preserve the requested format; HTML requires an HTML/web-page request.
 - [Human guide](https://jeonkwan.github.io/swiss-atelier-design-system/README.md): Integration, skill installation, local development, and limitations.
 - [Living specimen](https://jeonkwan.github.io/swiss-atelier-design-system/): Nine interactive design modules.
-- [Starter HTML](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html): Working page with only the public stylesheet and runtime.
+- [Starter HTML](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html): Draft ADR with context, decision, consequences, evidence, and review prompts.
+
+- [Diagram starter](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-diagram.html): Portable conceptual topology and independent text equivalent.
+- [Integration example](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-integration.html): Public CSS and optional runtime only.
+- [Authoring method](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/references/authoring.md): Audience, evidence, outlines, reader checks.
+- [Diagram method](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/references/diagrams.md): Representation choice, scope, notation, omissions.
+- [Distribution](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/references/distribution.md): Coherent current-main, pinned, and vendored recipes; token coverage.
 
 ## Public assets
 
@@ -23,4 +29,4 @@
 - [Changelog](https://jeonkwan.github.io/swiss-atelier-design-system/CHANGELOG.md): Version history.
 - [Repository](https://github.com/Jeonkwan/swiss-atelier-design-system): Source and issues.
 
-Pages assets track main. Pin v1.0.0 with https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css and the matching atelier.js for stable imports. Fonts require Google Fonts connectivity unless vendored separately. The skill is portable but must be explicitly loaded or installed by the consuming agent.
+Pages assets and guidance track the same deployed main build. For stable 1.1.0 consumption, use its complete tagged tree and matching assets. For historical v1.0.0 use its complete tagged tree, skill, tokens, template, CSS, and JS; do not mix the new contextual-token recipes with old CSS. See distribution above. Fonts use Google Fonts with fallbacks. Copy the complete skill directory, including agents/openai.yaml and references/. Installation or discovery does not activate the skill; explicit user invocation is required. Companion skills are optional; Swiss branding remains authoritative. Print/no-JS/offline typography/CJK delivery extensions are deferred.

@@ -10,3 +10,16 @@ main .flex > * { min-width: 0; }
 @media (max-width: 480px) {
   header .badge-teal { display: none; }
 }
+
+/* Contextual text roles retain brand fills/strokes on tinted surfaces. */
+[class~="text-[#D9381E]"] { color: var(--ink-focal); }
+[class~="text-[#0F766E]"] { color: var(--ink-positive); }
+header > div > div, header > div > div > div { flex-wrap: wrap; }
+[class~="bg-[#F4F4F6]"] .syn-cm { color: var(--ink-code); }
+#toastMsg { max-width: calc(100vw - 2.5rem); }
+/* At high zoom or in landscape, keep the header from covering the reading area. */
+@media (max-height: 480px) {
+  body > header.sticky { position: static; }
+  html { scroll-padding-top: 1rem; }
+  section[id] { scroll-margin-top: 1rem; }
+}

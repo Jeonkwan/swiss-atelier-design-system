@@ -1,45 +1,35 @@
 ---
 name: swiss-atelier
-description: Create or edit technical explainers, architecture decision records, and editorial SVG diagrams using the Swiss Atelier design system. Use when the user requests Swiss Atelier or explicitly chooses its serif typography, hairline surfaces, and orange/teal semantics.
+description: Create or edit technical explainers, ADRs, and editorial diagrams with Swiss Atelier only when the user explicitly invokes $swiss-atelier or asks to use Swiss Atelier. Generic writing, diagram, or visual-style requests do not activate this skill.
 ---
 # Swiss Atelier
 
-Build clear technical documents with Swiss grid discipline and warm editorial typography. Keep the user's subject and requested output format; this skill supplies the visual system.
+Apply this skill only after an explicit user invocation, such as `$swiss-atelier` or “use Swiss Atelier.” Installation, discovery, a reference mention, or matching visual preferences does not activate it. Preserve the requested output format; if unspecified, retain the current conversation/document format. Create HTML only when the user requests HTML or a web page. Swiss supplies visual identity and an authoring method, not domain facts or permission to change formats.
 
-## Load the maintained assets
+## Establish the explanation
 
-Canonical site: https://jeonkwan.github.io/swiss-atelier-design-system/
+Reuse known audience, reader task, conclusion/decision, sources, unknowns, and delivery constraints. Ask only unresolved questions that would change the result. For drafting and reader checks, read [authoring](references/authoring.md). For any diagram, first choose its representation and define its semantics using [diagrams](references/diagrams.md). Missing evidence stays unknown.
 
-1. Read the [discovery index](https://jeonkwan.github.io/swiss-atelier-design-system/llms.txt) and [starter](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html). In this repository use `templates/starter-adr.html` directly.
-2. Use the shared stylesheet and optional runtime; consuming pages do not need Tailwind or the specimen's `site.css` / `site.js`:
+## Load one coherent asset set
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css">
-<script src="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.js" defer></script>
-```
+In this checkout, copy `templates/starter-adr.html` or `templates/starter-diagram.html`; both use the adjacent `dist/` bundle. Copy this entire skill directory, including `references/`, when installing it elsewhere.
 
-3. Use [typed tokens](https://jeonkwan.github.io/swiss-atelier-design-system/dist/tokens.json) for exact values and the [stylesheet](https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.css) for supported classes. If hosting locally, vendor these two assets and update paths. Do not use raw GitHub URLs as CSS/JS imports.
-4. For single-file delivery, inline the shared CSS and needed runtime. Google Fonts still requires a network connection; use system fallbacks or appropriately licensed local fonts for fully offline delivery.
+For hosted use, see [distribution](references/distribution.md): choose current-main assets/guidance together, a complete immutable release, or a vendored checkout. Do not combine pinned CSS with later tokens or templates. Consumers need `atelier.css` and optionally `atelier.js`, never Tailwind or the specimen's `site.css`/`site.js`.
 
-## Visual contract
+## Preserve the identity; adapt the layout
 
-- **Surfaces:** Gallery Stone `#F4F4F6` page, white `#FFFFFF` cards, Subtle Zinc `#E4E4E7` wells. Borders `1px solid #CBD5E1`, radius `4px`, no shadows or blur.
-- **Display:** Fraunces 500, tracking `-0.02em`, for headings, section numerals, and headline metrics. Apply `atelier-h1`, `atelier-h2`, or `atelier-h3` explicitly.
-- **Prose:** Literata 440, size `0.98rem`, line-height `1.68`, tracking `-0.005em`, measure `60ch–68ch`; use `atelier-prose`.
-- **Chrome:** Geist for UI, tables, navigation, and sidenotes (`atelier-ui`); Geist Mono for code, ports, and badges (`atelier-mono`).
-- **Meaning:** Orange `#D9381E` for one or two focal elements per view. Teal `#0F766E` for verified states, recommendations, and compliance. Muted `#57534E` for secondary metadata. Add labels, not just color.
-- **Components:** `atelier-card`, `atelier-well`, `atelier-callout-focal`, `atelier-callout-verified`, `atelier-callout-note`, `atelier-badge-orange`, `atelier-badge-teal`, `atelier-badge-neutral`, `atelier-code-inline`, and `atelier-table` are public classes. Add layout CSS for the particular document.
+- **Identity:** Gallery Stone paper, white cards, Subtle Zinc wells, 1px hairlines, 4px radii, no shadows/blur. Fraunces display, Literata prose, Geist UI/tables, Geist Mono technical text. Use explicit `atelier-h1`/`h2`/`h3` classes.
+- **Defaults:** Fraunces 500, tracking −0.02em; Literata 440, 0.98rem, line-height 1.68, tracking −0.005em, measure 60–68ch. Adapt size, measure, wrapping, and density for the reader and delivery surface; these are brand calibration, not universal readability evidence.
+- **Signals:** Orange `--accent-primary` for one or two focal elements; teal `--accent-secondary` for recommendations or supported verification. State proposed/accepted/verified/unknown in words; acceptance is not empirical verification. Use `--ink-focal` / `--ink-positive` for small colored text on paper/tints. Check actual pairings.
+- **Components:** `atelier-card`, `atelier-well`, `atelier-callout-focal`, `atelier-callout-verified`, `atelier-callout-note`, `atelier-badge-orange`/`teal`/`neutral`, `atelier-code-inline`/`focal`, `atelier-table`. Add document-local layout CSS. Tokens specify shared roles, not complete specimen re-theming.
+- **Diagrams:** Structural 4px grid, orthogonal off-axis connectors with 8px elbows, connectors before nodes, opaque label masks. Font sizes need not follow the grid. Preserve readable labels at the rendered scale and local scrolling for essential two-dimensional views; provide a complete nearby text equivalent.
 
-## Diagrams and code
+## Code and delivery
 
-Place SVG nodes on a `4px` grid. Route off-axis connectors orthogonally with `8px` rounded elbows. Draw connectors before nodes and put labels on opaque masks so lines cannot cross text. Give each diagram an accessible title/description; allow horizontal scrolling inside its container on narrow screens.
+Use `<pre data-atelier-code data-lang="rust">`; escape source HTML (`&lt;`, `&amp;`). Common token sets: Rust, TOML, SQL, JS/TS, Python, shell. One-based `data-focal-lines="3,5"` and `data-verified-lines="7"` add styling, never evidence. `SwissAtelier.initAll()` processes new blocks; the highlighter is line-oriented, not a parser. For complex constructs use a dedicated tokenizer with `.syn-*` classes. Await `SwissAtelier.copyToClipboard(text)` and handle rejection.
 
-Use `<pre data-atelier-code data-lang="rust">` for automatic line numbers and syntax highlighting. Supported common token sets include `rust`, `toml`, `sql`, `js`/`ts`, `py`/`python`, and `sh`/`shell`. Set one-based `data-focal-lines="3,5"` or `data-verified-lines="7"` when it adds meaning. Escape HTML source inside `<pre>`: `&lt;` for `<` and `&amp;` for `&`, including Rust generic types. For dynamically added blocks call `SwissAtelier.initAll()`; it skips processed blocks.
+Optional companions: doc-coauthoring can help with audience/structure/review; diagram-design with representation/semantics/layout. Keep Swiss fonts, colors, surfaces, and geometry; the user's format and constraints govern delivery. No companion installation, global edits, or external scripts are required. The linked methods work on their own.
 
-The highlighter is line-oriented, not a parser. For complex multiline strings/comments use a dedicated tokenizer with the public `.syn-*` classes, or manually mark tokens. Clipboard helper `SwissAtelier.copyToClipboard(text)` returns a promise: await it and show a failure message if it rejects.
+Check the reader's conclusion, rationale, uncertainty, and next action; then inspect desktop/narrow layout, zoom/spacing, fallback fonts, keyboard focus, diagram equivalents, tables, and copy success/failure. Use the matching accessibility guide from your chosen checkout/release. This is a web-first system; print, no-JS, offline typography, and CJK extensions are outside the verified delivery scope.
 
-## Verify delivery
-
-Open the output at desktop and narrow mobile widths. Confirm the four typography roles, readable prose measure, and hairline surfaces. Check keyboard focus, meaningful heading order, named diagrams, table headers, labels for semantic colors, and reduced-motion behavior. Code should copy without line numbers and keep its original text. Color tokens alone do not establish WCAG conformance; check the actual text/background pair at the rendered size.
-
-For changes to the system itself, read the repository's `AGENTS.md` and `CONTRIBUTING.md`. Build and validate before committing generated assets.
+For system changes, read repository `AGENTS.md` and `CONTRIBUTING.md`; build and test generated assets.

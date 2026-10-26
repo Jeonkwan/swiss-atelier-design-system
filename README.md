@@ -2,7 +2,20 @@
 
 A living information design system for technical explainers, architecture decision records, and editorial SVG diagrams. Swiss grid discipline meets Fraunces headings, Literata prose, and Geist UI and code.
 
-**[Explore the living system](https://jeonkwan.github.io/swiss-atelier-design-system/)** · **[Open the starter](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html)** · **[Agent skill](skills/swiss-atelier/SKILL.md)** · **[Contribute](CONTRIBUTING.md)**
+**[Explore the living system](https://jeonkwan.github.io/swiss-atelier-design-system/)** · **[ADR starter](templates/starter-adr.html)** · **[Diagram starter](templates/starter-diagram.html)** · **[Agent skill](skills/swiss-atelier/SKILL.md)** · **[Contribute](CONTRIBUTING.md)**
+
+This checkout is **1.1.0**. Use matching assets, templates, tokens, and guidance from one checkout or release. For stable consumption, use the complete `v1.1.0` release; Pages tracks deployed main.
+
+## Start with the reader's task
+
+- Write a decision: copy the [draft ADR](templates/starter-adr.html), then fill context, decision/reasons, consequences, evidence/unknowns, and next action.
+- Explain relationships: use the [portable diagram](templates/starter-diagram.html) and [representation selector](skills/swiss-atelier/references/diagrams.md) before drawing.
+- Integrate assets: use the two imports below or the [integration example](templates/starter-integration.html).
+- Instruct an agent: load the [complete portable skill](skills/swiss-atelier/SKILL.md), including its references; optional companion skills retain Swiss identity.
+- Inspect presentation: explore the nine-module specimen. Its storage-engine story and metrics are synthetic, not production evidence.
+- Maintain the system: read [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Reuse supplied audience, outcome, source facts, assumptions/unknowns, and delivery constraints. Ask only unresolved questions that change the result. Draft an answer-first explanation or a decision-first ADR as appropriate. Ask a reader to recover the conclusion, reasoning, consequences, uncertainty, and next action. The [authoring method](skills/swiss-atelier/references/authoring.md) covers evidence, numbers, and reader checks.
 
 ## Use it in a page
 
@@ -19,22 +32,21 @@ Import the shared stylesheet and optional syntax-highlighting runtime. No framew
 </article>
 ```
 
-Start with [templates/starter-adr.html](templates/starter-adr.html), which demonstrates the public classes. When copying it into another project, update its two relative imports to the absolute URLs above or vendor `dist/atelier.css` and `dist/atelier.js` alongside your page. Use `atelier-h1` / `atelier-h2` / `atelier-h3` for headings; the bundle deliberately does not restyle every heading automatically.
+Start with [templates/starter-adr.html](templates/starter-adr.html), which supplies decision structure; the separate integration example demonstrates code highlighting. When copying it into another project, update its two relative imports to the absolute URLs above or vendor `dist/atelier.css` and `dist/atelier.js` alongside your page. Use `atelier-h1` / `atelier-h2` / `atelier-h3` for headings; the bundle deliberately does not restyle every heading automatically.
 
-The Pages URLs follow `main`. For a fixed release, use:
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css">
-<script src="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.js" defer></script>
-```
+The Pages URLs follow deployed main; use all guidance, tokens, templates, CSS, and JS from the same build. Use the adjacent relative bundle, vendor this complete checkout, or use the [complete v1.1.0 tree](https://github.com/Jeonkwan/swiss-atelier-design-system/tree/v1.1.0). The historical [v1.0.0 tree](https://github.com/Jeonkwan/swiss-atelier-design-system/tree/v1.0.0) remains available with its own matching guidance; it does not contain the new additions. See [distribution](skills/swiss-atelier/references/distribution.md) for complete pinned recipes and token coverage limits.
 
 Fonts load from Google Fonts through CSS. System fallbacks remain available if the network is blocked. For a fully offline page, vendor appropriately licensed font files and replace the Google Fonts import. The line-oriented highlighter supports common Rust, TOML, SQL, JavaScript/TypeScript, Python, and shell tokens; it is a display helper, not a language parser. Dynamic code blocks can be formatted by calling `SwissAtelier.initAll()` again.
 
 ## Use it with an agent
 
-Give an agent the [hosted skill](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md), [token file](https://jeonkwan.github.io/swiss-atelier-design-system/dist/tokens.json), and [starter](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html), or use this prompt:
+The skill requires explicit user invocation: `$swiss-atelier` or “use Swiss Atelier.” Installing it, discovering its links, or requesting similar typography does not activate it. The skill preserves your requested output format; HTML requires an explicit HTML or web-page request.
 
-> Use Swiss Atelier for this page. Read https://jeonkwan.github.io/swiss-atelier-design-system/llms.txt and follow its linked skill. Import the shared CSS and runtime, preserve the typography and semantic colors, and verify keyboard access and mobile layout.
+For an HTML page, give an agent the [hosted skill](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md), [token file](https://jeonkwan.github.io/swiss-atelier-design-system/dist/tokens.json), and [starter](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html), or use this prompt:
+
+> Use Swiss Atelier to create an HTML page. Read https://jeonkwan.github.io/swiss-atelier-design-system/llms.txt and follow its linked skill. Import the shared CSS and runtime, preserve the typography and semantic colors, and verify keyboard access and mobile layout.
+
+The Swiss skill works alone. Optional doc-coauthoring helps with structure/review; diagram-design helps with semantics/layout. Swiss supplies the visual identity, and the user supplies the subject, format, and constraints. No global skill changes or companion scripts are required.
 
 For an agent that supports local skills, copy `skills/swiss-atelier/` into its skill directory. For example, from this checkout into another project's `.agents/skills/`:
 
@@ -43,7 +55,7 @@ mkdir -p /path/to/project/.agents/skills
 cp -R skills/swiss-atelier /path/to/project/.agents/skills/
 ```
 
-Use the directory supported by your agent. A hosted `SKILL.md` or `llms.txt` helps discovery; it does not automatically install or activate a skill. Repository contributors should read [AGENTS.md](AGENTS.md).
+Use the directory supported by your agent. Copy `agents/openai.yaml` with the rest of the skill: its `policy.allow_implicit_invocation: false` disables automatic selection in supporting agents. Other agents must follow the same explicit-invocation rule in `SKILL.md`. A hosted `SKILL.md` or `llms.txt` helps discovery; it does not automatically install or activate a skill. Repository contributors should read [AGENTS.md](AGENTS.md).
 
 ## Run and maintain locally
 
@@ -56,7 +68,7 @@ npm test
 npm run preview
 ```
 
-Open [localhost:4173](http://localhost:4173). Built output lives in `_site/`. Pull requests run build and validation; pushes to `main` also publish GitHub Pages. Pages must use **Settings → Pages → Source → GitHub Actions**. See [the publishing guide](docs/publishing.md).
+Open [localhost:4173](http://localhost:4173). Built output lives in `_site/`. Pull requests run build and validation; pushes to `main` also publish GitHub Pages. Pages must use **Settings → Pages → Source → GitHub Actions**. See [the publishing guide](docs/publishing.md). Review the [implementation and validation report](docs/implementation-review-2026-10-26.md) for this release.
 
 | Location | Purpose |
 | --- | --- |
@@ -72,9 +84,9 @@ Open [localhost:4173](http://localhost:4173). Built output lives in `_site/`. Pu
 | `docs/`, `CONTRIBUTING.md` | Human guidance, release process, and initial review |
 | `deploy/` | Optional legacy GCS deployment; not used for Pages |
 
-## Design contract
+## Identity and adaptable defaults
 
-Gallery Stone paper `#F4F4F6`, white cards, `1px` hairline borders, `4px` radii, no shadows. Fraunces 500 headings, Literata 440 prose, Geist UI, Geist Mono code. Reserve orange `#D9381E` for one or two focal elements; use teal `#0F766E` for verified states. Diagrams use a `4px` grid and orthogonal connectors with rounded elbows. Communicate state in labels as well as color. See the [accessibility guidance](docs/accessibility.md).
+Gallery Stone paper `#F4F4F6`, white cards, `1px` hairline borders, `4px` radii, no shadows. Fraunces 500 headings, Literata 440 prose, Geist UI, Geist Mono code. Reserve orange `#D9381E` for one or two focal elements; use teal `#0F766E` for recommendations or supported verification. Use contextual `--ink-focal` / `--ink-positive` for small text on paper and tints. Accepted decisions and verified measurements are different statuses. Diagrams use a `4px` grid and orthogonal connectors with rounded elbows. Communicate state in labels as well as color. Size, line-height, measure, wrapping, and density may adapt for the reader while retaining the typography roles and surfaces. The 4px grid applies to structural geometry, not a compulsory font-size grid. Tokens generate shared CSS roles; specimen literals and layout are not a complete theme engine. See the [accessibility guidance](docs/accessibility.md). This is web-first: print, no-JS, offline typography, and CJK extensions remain deferred.
 
 ## License and provenance
 

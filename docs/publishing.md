@@ -6,7 +6,7 @@ Live site: https://jeonkwan.github.io/swiss-atelier-design-system/
 
 ## GitHub Pages
 
-Pages uses GitHub Actions. The workflow builds `_site/`, validates the runtime and local links, checks generated assets are committed, then uploads only the public allowlist. PRs validate without deploying. Pushes to `main` publish after successful checks.
+Pages uses GitHub Actions. The workflow builds `_site/`, validates the runtime and local links, checks generated assets are committed, then uploads only the public allowlist. Public documentation is individually listed; local `docs/research/` remains outside the artifact and is not part of the release commit. PRs validate without deploying. Pushes to `main` publish after successful checks.
 
 For a new fork, enable **Settings → Pages → Source → GitHub Actions** and update canonical URLs in the guides, skill, `llms.txt`, and specimen snippets. Preserve relative links for site navigation so project subpaths continue to work. A first deployment may take several minutes.
 

@@ -1,10 +1,10 @@
-# Agent guide — Swiss Atelier 1.0.0
+# Agent guide — Swiss Atelier 1.1.0
 
 This folder is the repository root. It contains the living specimen, redistributable CSS/JS bundle, and portable agent skill. Other design systems in the parent folder are separate projects.
 
 ## Start here
 
-- Creating a page with Swiss Atelier: read `skills/swiss-atelier/SKILL.md` and copy `templates/starter-adr.html`.
+- Applying Swiss Atelier: only when the user explicitly invokes `$swiss-atelier` or asks to use Swiss Atelier, read `skills/swiss-atelier/SKILL.md`. Preserve their output format; create HTML only for an explicit HTML/web-page request. For that delivery, establish audience, task, sources and unknowns; copy `templates/starter-adr.html` or `templates/starter-diagram.html`. Use `templates/starter-integration.html` for the original bundle example.
 - Changing the design system: read `CONTRIBUTING.md` and the public contract below.
 - Publishing: read `docs/publishing.md`. Pages deploys the `_site/` allowlist, never the checkout.
 
@@ -17,20 +17,22 @@ This folder is the repository root. It contains the living specimen, redistribut
 - `skills/swiss-atelier/`, `templates/`, `llms.txt`: public consumption guidance. Keep their links and examples working under the repository's Pages subpath.
 - `.github/workflows/deploy.yml`: build/test on PRs; build/test and deploy on `main`.
 
-## Public design contract
+## Identity and defaults
 
 - Quiet Hairline surfaces: Gallery Stone `#F4F4F6`, white cards, Subtle Zinc `#E4E4E7`, `1px solid #CBD5E1`, `4px` radii, no shadows or blur filters.
-- Display: Fraunces 500, tracking `-0.02em`. Body: Literata 440, `0.98rem`, line-height `1.68`, tracking `-0.005em`, measure `60ch–68ch`. Geist for UI/tables; Geist Mono for technical text.
-- Orange `#D9381E`: one or two focal elements per view. Teal `#0F766E`: verified states and recommendations. Pair color with words/icons.
-- SVGs: `4px` layout grid; orthogonal off-axis connectors with `8px` rounded elbows; connectors before nodes and opaque masks behind connector labels. Provide accessible names.
-- Syntax palette is defined by `--syn-*` tokens. Highlighter output must preserve source text, escape HTML, and avoid re-tokenizing generated markup. It is line-oriented and does not promise full language parsing.
+- Adaptable calibration: Display: Fraunces 500, tracking `-0.02em`. Body: Literata 440, `0.98rem`, line-height `1.68`, tracking `-0.005em`, measure `60ch–68ch`. Geist for UI/tables; Geist Mono for technical text.
+- Orange `#D9381E`: one or two focal elements per view. Teal `#0F766E`: supported verification and recommendations. Use `--ink-focal` / `--ink-positive` on tinted surfaces. Pair color with explicit factual status; acceptance does not verify a measurement.
+- SVGs: `4px` layout grid; orthogonal off-axis connectors with `8px` rounded elbows; connectors before nodes and opaque masks behind connector labels. Provide accessible names and a complete nearby text equivalent. The grid governs structural geometry, not type sizes; enlarge/wrap/split figures to keep labels readable.
+- Syntax hues use `--syn-*` tokens; comments on paper/tints use contextual `--ink-code`, while ordinary `.syn-cm` on white still consumes `--syn-comment` for compatible overrides. Highlighter output must preserve source text, escape HTML, and avoid re-tokenizing generated markup. It is line-oriented and does not promise full language parsing.
+
+Retain typography roles, palette roles, and quiet surfaces. Adapt type size, measure, spacing, wrapping, and density for accessibility and the reader's task. This fixed-brand system does not promise full re-theming: tokens generate shared custom properties; specimen literals, treatment values, and SVG geometry remain partly local. See the skill's distribution reference for a concrete token-change example and release-coherent consumption. Companion authoring/diagram skills are optional and must preserve Swiss identity.
 
 ## Validation and maintenance
 
-Run `npm ci`, `npm run build`, and `npm test`. Commit generated `dist/` changes. Verify desktop/mobile, keyboard controls, copy success/failure, and the starter with only the shared bundle. Never claim accessibility conformance from token colors alone; see `docs/accessibility.md`.
+Run `npm ci`, `npm run build`, and `npm test`. Commit generated `dist/` changes. Use `tests/reader-cases.md` for repeatable content checks; save input, allowed references, expected/actual answers and ambiguities. Label agent inspection honestly. Verify desktop/mobile, 200%/400% zoom, user spacing, loaded/fallback fonts, text equivalents, keyboard controls, copy success/failure, and the starter with only the shared bundle. Never claim accessibility conformance from token colors alone; see `docs/accessibility.md`.
 
 Pages: https://jeonkwan.github.io/swiss-atelier-design-system/
 Repository: https://github.com/Jeonkwan/swiss-atelier-design-system
-Pinned release assets: https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css
+Current release: `v1.1.0`; use its complete tree and matching assets/guidance. Historical `v1.0.0` remains immutable. Do not create development-tag CDN URLs.
 
 Preserve immutable release tags. Document user-visible changes in `CHANGELOG.md`; do not add unrelated infrastructure or modify sibling folders.

@@ -1,74 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADR-001: Starter Specification — Swiss Atelier</title>
-  <!-- 1. Import Swiss Atelier Stylesheet (Replace with your GitHub Pages / jsDelivr / GCS URL when hosted remotely) -->
-  <link rel="stylesheet" href="../dist/atelier.css" />
-  <!-- 2. Import Swiss Atelier Runtime (Auto-highlights [data-atelier-code] blocks) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADR: Decision title — Swiss Atelier</title>
+  <link rel="stylesheet" href="../dist/atelier.css">
   <script src="../dist/atelier.js" defer></script>
+  <style>
+    main { max-width: 960px; margin: auto; padding: clamp(1rem, 4vw, 3rem); }
+    article { padding: clamp(1rem, 4vw, 2.5rem); overflow-wrap: anywhere; }
+    section { margin-top: 2rem; }
+    .metadata { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    .table-scroll { max-width: 100%; overflow-x: auto; }
+  </style>
 </head>
 <body class="atelier-page">
-  <div style="max-width: 920px; margin: 0 auto; padding: 2.5rem 1.5rem;">
-
-    <article class="atelier-card" style="overflow: hidden;">
-      <!-- Top Metadata Ribbon -->
-      <div class="atelier-ui" style="padding: 0.75rem 2rem; background: var(--bg-subtle); border-bottom: 1px solid var(--border-color); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; font-size: 12px;">
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
-          <span class="atelier-badge-orange">ADR-001 · STARTER TEMPLATE</span>
-          <span class="atelier-badge-teal">VERIFIED</span>
+  <main>
+    <article class="atelier-card">
+      <header>
+        <div class="metadata">
+          <span class="atelier-badge-orange">ADR · FILLABLE TEMPLATE</span>
+          <span class="atelier-badge-neutral">STATUS: DRAFT</span>
         </div>
-        <span class="atelier-mono" style="color: var(--ink-muted); font-size: 11px;">Swiss Atelier v1.0.0</span>
-      </div>
-
-      <!-- Main Content Body -->
-      <div style="padding: 2.25rem 2rem;">
-        <header style="border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 1.75rem;">
-          <div class="atelier-mono" style="font-size: 11px; text-transform: uppercase; color: var(--accent-primary); font-weight: 600; margin-bottom: 0.5rem;">
-            Architecture Decision Record
-          </div>
-          <h1 class="atelier-h1">Two-Line Drop-In Integration for Technical Specifications</h1>
-          <p class="atelier-prose" style="margin: 0;">
-            By importing <code class="atelier-code-inline">atelier.css</code> and <code class="atelier-code-inline">atelier.js</code>, any HTML document automatically inherits <strong>Fraunces 500</strong> headings, <strong>Literata 440</strong> body prose, <strong>1px Quiet Hairline</strong> surfaces, and automatic syntax highlighting.
-          </p>
-        </header>
-
-        <section style="margin-bottom: 2rem;">
-          <h2 class="atelier-h2">1. Automatic Syntax Highlighting with Focal Line Callouts</h2>
-          <p class="atelier-prose">
-            Add <code class="atelier-code-inline">data-atelier-code</code>, <code class="atelier-code-inline">data-lang="rust"</code>, <code class="atelier-code-focal">data-focal-lines="3"</code>, and <code class="atelier-code-inline">data-verified-lines="5"</code> to any <code class="atelier-code-inline">&lt;pre&gt;</code> element:
-          </p>
-
-          <div class="atelier-card" style="overflow: hidden; margin-top: 1rem;">
-            <div class="atelier-mono" style="padding: 0.5rem 1rem; background: var(--bg-subtle); border-bottom: 1px solid var(--border-color); font-size: 11px; color: var(--ink-muted); display: flex; justify-content: space-between;">
-              <span style="color: var(--ink-primary); font-weight: 600;">src/consensus.rs</span>
-              <span>Auto-Highlighted by atelier.js</span>
-            </div>
-            <pre data-atelier-code data-lang="rust" data-focal-lines="3" data-verified-lines="5" style="margin: 0; padding: 0.75rem 0; overflow-x: auto;">
-// Automatic client-side tokenization via dist/atelier.js
-pub fn verify_quorum(epoch: u64, min_hlc: HlcTimestamp) -> Result&lt;Arc&lt;SnapshotPage&gt;, ReadFallback&gt; {
-    let active = RING_BUFFER.load(Ordering::Acquire); // FOCAL: Highlighted via data-focal-lines="3"
-    if active.hlc_watermark >= min_hlc {
-        return Ok(Arc::clone(&active.page)); // VERIFIED: Highlighted via data-verified-lines="5"
-    }
-    Err(ReadFallback::RouteToQuorum)
-}
-            </pre>
-          </div>
-        </section>
-
-        <div class="atelier-callout-focal">
-          <div class="atelier-mono" style="font-size: 10px; text-transform: uppercase; font-weight: 600; color: var(--accent-primary); margin-bottom: 4px;">
-            Focal Invariant
-          </div>
-          <p class="atelier-prose" style="margin: 0; font-size: 0.92rem; color: var(--ink-primary);">
-            Every structural border, badge, and focal highlight encodes architectural meaning without drop-shadow clutter.
-          </p>
+        <h1 class="atelier-h1">Decision title: state the choice</h1>
+        <p class="atelier-prose">Decision in brief: replace this prompt with the proposed choice and its main reason. This draft records no accepted decision or verified result.</p>
+        <p class="atelier-ui">Owner: unassigned · Date: not recorded · Supersedes / superseded by: none recorded.</p>
+      </header>
+      <section>
+        <h2 class="atelier-h2">Context and reader task</h2>
+        <p class="atelier-prose">Who must decide or act, what do they already know, and which constraints or forces make this decision necessary? Reuse supplied context and link source facts. Label assumptions and unknowns.</p>
+      </section>
+      <section>
+        <h2 class="atelier-h2">Decision and reasons</h2>
+        <p class="atelier-prose">We propose to… because… State scope, boundaries, and the reasons that follow from the context. Change status to accepted only when an actual decision is recorded; acceptance does not verify performance.</p>
+      </section>
+      <section>
+        <h2 class="atelier-h2">Alternatives considered</h2>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Decision alternatives">
+          <table class="atelier-table">
+            <caption class="atelier-ui">Fill with comparable criteria; unknown measurements stay unknown.</caption>
+            <thead><tr><th scope="col">Option</th><th scope="col">Reason to choose</th><th scope="col">Cost or uncertainty</th></tr></thead>
+            <tbody><tr><th scope="row">Proposed option: to fill</th><td>To document</td><td>Unknown; evidence needed</td></tr>
+              <tr><th scope="row">Alternative: to fill</th><td>To document</td><td>Unknown; evidence needed</td></tr></tbody>
+          </table>
         </div>
-      </div>
+      </section>
+      <section>
+        <h2 class="atelier-h2">Consequences</h2>
+        <p class="atelier-prose">Benefits: to document. Costs and operational responsibilities: to document. Risks, reversibility, and conditions that would reopen this decision: to document.</p>
+      </section>
+      <section class="atelier-callout-note">
+        <h2 class="atelier-h2">Evidence and unknowns</h2>
+        <p class="atelier-prose">No measurements supplied. Link each source and distinguish observed, estimated, synthetic, and proposed claims. For numbers include units, definition/denominator, period, baseline, and uncertainty. Record missing evidence and who will obtain it.</p>
+      </section>
+      <section>
+        <h2 class="atelier-h2">Next action and review</h2>
+        <p class="atelier-prose">Name the next action, owner, and review trigger. Ask a reader to recover the decision, rationale, consequence, uncertainty, and next action using only this record.</p>
+      </section>
+      <footer class="atelier-ui" style="margin-top:2rem">
+        <a href="./starter-integration.html">Public-bundle integration and code example</a> ·
+        <a href="./starter-diagram.html">Portable diagram example</a>
+      </footer>
     </article>
-
-  </div>
+  </main>
 </body>
 </html>
