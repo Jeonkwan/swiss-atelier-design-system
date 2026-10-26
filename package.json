@@ -1,0 +1,16 @@
+{
+  "name": "swiss-atelier-design-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A living information design system for people and agents",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs && tailwindcss -i styles/site.css -o dist/site.css --minify && node scripts/package-site.mjs",
+    "test": "node --test tests/*.test.cjs && node scripts/check.mjs",
+    "preview": "python3 -m http.server 4173 --directory _site"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  },
+  "engines": { "node": ">=22" }
+}

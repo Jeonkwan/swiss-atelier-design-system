@@ -1,0 +1,26 @@
+# Swiss Atelier
+
+> A living information design system for technical documents, ADRs, and editorial diagrams. Fraunces 500 headings, Literata 440 prose, Geist UI/mono, hairline surfaces, and semantic orange/teal accents. Version 1.0.0.
+
+## Start here
+
+- [Agent skill](https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md): Use Swiss Atelier to create a page or diagram.
+- [Human guide](https://jeonkwan.github.io/swiss-atelier-design-system/README.md): Integration, skill installation, local development, and limitations.
+- [Living specimen](https://jeonkwan.github.io/swiss-atelier-design-system/): Nine interactive design modules.
+- [Starter HTML](https://jeonkwan.github.io/swiss-atelier-design-system/templates/starter-adr.html): Working page with only the public stylesheet and runtime.
+
+## Public assets
+
+- [Shared CSS](https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.css): Tokens, typography, components, and Google Fonts import.
+- [Runtime](https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.js): Code highlighting, line numbers, focal/verified highlights, async clipboard helper.
+- [DTCG typed tokens](https://jeonkwan.github.io/swiss-atelier-design-system/dist/tokens.json): Authoritative token values and CSS-name extensions.
+
+## Maintenance
+
+- [Agent repository guide](https://jeonkwan.github.io/swiss-atelier-design-system/AGENTS.md): Sources, invariants, public API, and verification.
+- [Contributing](https://jeonkwan.github.io/swiss-atelier-design-system/CONTRIBUTING.md): Development and release workflow.
+- [Accessibility](https://jeonkwan.github.io/swiss-atelier-design-system/docs/accessibility.md): Color and keyboard guidance; limitations.
+- [Changelog](https://jeonkwan.github.io/swiss-atelier-design-system/CHANGELOG.md): Version history.
+- [Repository](https://github.com/Jeonkwan/swiss-atelier-design-system): Source and issues.
+
+Pages assets track main. Pin v1.0.0 with https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css and the matching atelier.js for stable imports. Fonts require Google Fonts connectivity unless vendored separately. The skill is portable but must be explicitly loaded or installed by the consuming agent.

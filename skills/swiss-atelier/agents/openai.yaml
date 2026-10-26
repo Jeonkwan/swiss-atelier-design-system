@@ -1,0 +1,4 @@
+interface:
+  display_name: "Swiss Atelier"
+  short_description: "Editorial technical documents and system diagrams"
+  default_prompt: "Use $swiss-atelier to create a clear technical document with editorial typography and meaningful diagrams."

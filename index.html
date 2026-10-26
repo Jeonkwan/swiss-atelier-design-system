@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <title>Swiss Atelier (v1.0.0) — Living Information Design System &amp; Agent Hub</title>
+  <meta name="description" content="Swiss Atelier: a living design system for technical documents, editorial diagrams, and agents. Explore tokens, components, and ready-to-use examples." />
+  <link rel="stylesheet" href="./dist/site.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./dist/atelier.css" />
+  <script src="./dist/atelier.js" defer></script>
+</head>
+<body class="min-h-screen flex flex-col">
+  <a class="skip-link atelier-ui" href="#main-content">Skip to content</a>
+
+  <!-- TOP SYSTEM HEADER RIBBON (Quiet Hairline) -->
+  <header class="sticky top-0 z-30 bg-[#F4F4F6] border-b border-[#CBD5E1] px-4 sm:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-[4px] bg-[#141413] text-white font-display italic text-base" style="color: white;">A</span>
+        <div class="flex items-center gap-2.5">
+          <span class="font-ui font-semibold text-sm text-[#141413]">Swiss Atelier</span>
+          <span class="text-[#94A3B8]">/</span>
+          <span class="font-mono-code text-xs text-[#57534E]">v1.0.0 Living Design System</span>
+          <span class="badge-teal hidden sm:inline-block">Quiet Hairline · Literata 440 · Agent-Ready</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 font-ui text-xs">
+        <button id="btnJumpDiagrams" class="px-3 py-1.5 rounded-[4px] bg-white border border-[#CBD5E1] text-[#292524] hover:border-[#94A3B8] transition">
+          SVG Diagrams (3)
+        </button>
+        <button id="btnJumpCode" class="px-3 py-1.5 rounded-[4px] bg-white border border-[#CBD5E1] text-[#292524] hover:border-[#94A3B8] transition">
+          Syntax Code (3)
+        </button>
+        <button id="btnJumpAgent" class="px-3 py-1.5 rounded-[4px] bg-[#0F766E] text-white font-medium hover:bg-[#0D635C] transition">
+          Agent Skill &amp; CDN Hub
+        </button>
+        <button id="btnCopyAllCSS" class="px-3 py-1.5 rounded-[4px] bg-[#D9381E] text-white font-medium hover:bg-[#B82D16] transition">
+          Copy System CSS
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN 2-COLUMN WORKSPACE -->
+  <div class="max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+    <!-- LEFT NAVIGATION & SYSTEM DNA RAIL (3 cols on Desktop) -->
+    <aside class="lg:col-span-3 lg:sticky lg:top-20 space-y-6">
+      <div class="surface-card p-4 space-y-3">
+        <div class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E] font-semibold">
+          Contents · 9 Feature Modules
+        </div>
+        <nav class="space-y-0.5 font-ui text-xs" id="tocNav">
+          <a href="#sec-hero" class="toc-link active block py-1.5 pl-3 text-[#292524]">01. Hero &amp; KPI Summary</a>
+          <a href="#sec-prose" class="toc-link block py-1.5 pl-3 text-[#57534E]">02. Prose, Sidenotes &amp; Callouts</a>
+          <a href="#sec-diagrams" class="toc-link block py-1.5 pl-3 text-[#57534E]">03. SVG Diagram Suite (3 Tabs)</a>
+          <a href="#sec-code" class="toc-link block py-1.5 pl-3 text-[#57534E]">04. Syntax-Highlighted Code (3 Tabs)</a>
+          <a href="#sec-matrix" class="toc-link block py-1.5 pl-3 text-[#57534E]">05. Interactive Trade-Off Matrix</a>
+          <a href="#sec-timeline" class="toc-link block py-1.5 pl-3 text-[#57534E]">06. Roadmap &amp; 2x2 Quadrant</a>
+          <a href="#sec-type" class="toc-link block py-1.5 pl-3 text-[#57534E]">07. Typography Scale Specimen</a>
+          <a href="#sec-tokens" class="toc-link block py-1.5 pl-3 text-[#57534E]">08. Color &amp; CSS Token Exporter</a>
+          <a href="#sec-agent" class="toc-link block py-1.5 pl-3 text-[#0F766E] font-semibold">09. Agent Skill, Guides &amp; CDN Hub</a>
+        </nav>
+      </div>
+
+      <!-- Locked System DNA Card -->
+      <div class="surface-card p-4 space-y-3 font-ui text-xs">
+        <div class="flex items-center justify-between">
+          <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E] font-semibold">Locked System DNA</span>
+          <span class="w-2 h-2 rounded-full bg-[#0F766E]"></span>
+        </div>
+        <div class="space-y-2 pt-1 border-t border-[#CBD5E1] text-[11px]">
+          <div class="flex justify-between">
+            <span class="text-[#57534E]">Display:</span>
+            <span class="font-semibold text-[#141413]">Fraunces (500)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[#57534E]">Paragraphs:</span>
+            <span class="font-semibold text-[#D9381E]">Literata (440 · 0.98rem)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[#57534E]">UI / Tables:</span>
+            <span class="font-medium text-[#141413]">Geist Sans</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[#57534E]">Code / Syntax:</span>
+            <span class="font-mono-code text-[#1D4ED8]">Geist Mono (8 Tokens)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-[#57534E]">Edges:</span>
+            <span class="font-mono-code text-[#0F766E]">1px Hairline · 0 Shadow</span>
+          </div>
+        </div>
+
+        <!-- Direct Machine-Readable Endpoints -->
+        <div class="pt-2 border-t border-[#CBD5E1] space-y-1">
+          <div class="font-mono-code text-[10px] uppercase text-[#57534E]">Hosted Package Endpoints</div>
+          <div class="flex flex-wrap gap-1.5 pt-1 font-mono-code text-[10px]">
+            <a href="./dist/atelier.css" class="px-1.5 py-0.5 rounded bg-[#F4F4F6] border border-[#CBD5E1] text-[#141413] hover:border-[#D9381E]">atelier.css</a>
+            <a href="./dist/atelier.js" class="px-1.5 py-0.5 rounded bg-[#F4F4F6] border border-[#CBD5E1] text-[#141413] hover:border-[#D9381E]">atelier.js</a>
+            <a href="./dist/tokens.json" class="px-1.5 py-0.5 rounded bg-[#F4F4F6] border border-[#CBD5E1] text-[#141413] hover:border-[#D9381E]">tokens.json</a>
+            <a href="./skills/swiss-atelier/SKILL.md" class="px-1.5 py-0.5 rounded bg-[#CCFBF1] border border-[#0F766E] text-[#0F766E] font-semibold">SKILL.md</a>
+            <a href="./AGENTS.md" class="px-1.5 py-0.5 rounded bg-[#F4F4F6] border border-[#CBD5E1] text-[#141413] hover:border-[#0F766E]">AGENTS.md</a>
+            <a href="./llms.txt" class="px-1.5 py-0.5 rounded bg-[#F4F4F6] border border-[#CBD5E1] text-[#141413] hover:border-[#0F766E]">llms.txt</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT STREAM (9 cols on Desktop) -->
+    <main id="main-content" class="lg:col-span-9 space-y-12">
+
+      <!-- =====================================================================
+           MODULE 01: EDITORIAL HERO, METADATA RIBBON & 4-CARD KPI STRIP
+           ===================================================================== -->
+      <section id="sec-hero" class="surface-card overflow-hidden">
+        <div class="px-6 sm:px-10 py-3 bg-[#E4E4E7] border-b border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-ui text-xs">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="badge-orange">ADR-204 · ILLUSTRATIVE SPECIMEN</span>
+            <span class="badge-teal">STATUS: PRODUCTION VERIFIED</span>
+            <span class="font-mono-code text-[11px] text-[#57534E]">· REGION: ap-southeast-1</span>
+          </div>
+          <div class="font-mono-code text-[11px] text-[#57534E]">
+            Swiss Atelier v1.0.0 · Example content and metrics
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-10 space-y-8">
+          <div class="space-y-4">
+            <div class="font-mono-code text-xs uppercase tracking-wider font-semibold text-[#D9381E]">
+              Distributed State &amp; Read-Path Engineering
+            </div>
+            <h1 class="font-display text-3xl sm:text-5xl leading-[1.1]">
+              Zero-Lock Snapshot Ring Buffers for Sub-2ms Global Read Consensus
+            </h1>
+            <p class="font-body text-base sm:text-lg max-w-[66ch] text-[#292524]">
+              When a distributed storage engine serves 450,000 queries per second across regional edge POPs, synchronous quorum reads introduce unacceptable tail latency. This specification details our transition to a <strong>lease-verified ring buffer</strong> that bounds staleness to <span class="inline-code-focal">1,800ms</span> while cutting p99 read latency by 87%.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#D9381E]">
+              <div class="flex items-center justify-between">
+                <span class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#D9381E]">p99 Read Latency</span>
+                <span class="font-mono-code text-[10px] text-[#D9381E]">-87%</span>
+              </div>
+              <div class="font-display text-3xl mt-1.5 text-[#141413]">1.84 ms</div>
+              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
+                <div class="h-full bg-[#D9381E]" style="width: 18%"></div>
+              </div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Down from 14.2ms quorum read</div>
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#0F766E]">
+              <div class="flex items-center justify-between">
+                <span class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#0F766E]">Cache Hit Ratio</span>
+                <span class="font-mono-code text-[10px] text-[#0F766E]">SLA MET</span>
+              </div>
+              <div class="font-display text-3xl mt-1.5 text-[#141413]">94.6%</div>
+              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
+                <div class="h-full bg-[#0F766E]" style="width: 94.6%"></div>
+              </div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Verified across 12 edge POPs</div>
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1]">
+              <div class="flex items-center justify-between">
+                <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E]">Lease Window</span>
+                <span class="font-mono-code text-[10px] text-[#57534E]">BOUNDED</span>
+              </div>
+              <div class="font-display text-3xl mt-1.5 text-[#141413]">2,000 ms</div>
+              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
+                <div class="h-full bg-[#57534E]" style="width: 50%"></div>
+              </div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Monotonic hybrid logical clock</div>
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1]">
+              <div class="flex items-center justify-between">
+                <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#57534E]">Lock Contention</span>
+                <span class="font-mono-code text-[10px] text-[#0F766E]">ZERO-LOCK</span>
+              </div>
+              <div class="font-display text-3xl mt-1.5 text-[#141413]">0.00%</div>
+              <div class="w-full h-1 bg-[#E4E4E7] rounded-full mt-2.5 overflow-hidden">
+                <div class="h-full bg-[#0F766E]" style="width: 100%"></div>
+              </div>
+              <div class="font-ui text-[11px] text-[#57534E] mt-1.5">Atomic epoch pointer swap</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 02: LONG-FORM PROSE, MARGIN SIDENOTES & SEMANTIC CALLOUTS
+           ===================================================================== -->
+      <section id="sec-prose" class="surface-card p-6 sm:p-10 space-y-8">
+        <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 02 · Editorial Readability</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">1. Long-Form Technical Prose, Margin Sidenotes &amp; Callouts</h2>
+          </div>
+          <span class="badge-neutral">Literata 440 · 65ch Measure</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-8 space-y-4">
+            <p class="font-body">
+              In traditional multi-region deployments, engineers face an uncomfortable binary choice between <strong>strict linearizability</strong> (which requires a cross-ocean Raft or Paxos round-trip on every read) and <strong>eventual consistency</strong> (which risks serving stale state minutes after a write has committed). Neither extreme matches how interactive applications actually behave.
+            </p>
+            <p class="font-body">
+              What users and downstream microservices almost always require is <em>read-your-own-writes monotonicity</em> paired with a deterministic upper bound on staleness<sup class="font-mono-code text-[10px] text-[#D9381E] font-bold ml-0.5">[S1]</sup>. If a client mutates a permission graph in Singapore, any subsequent read carrying a session vector greater than or equal to <span class="inline-code">hlc_epoch: 109482910</span> must observe that mutation immediately, whereas unauthenticated public reads can safely read from an in-memory ring buffer within a <span class="inline-code-focal">2,000ms</span> lease window.
+            </p>
+
+            <h3 class="font-display text-xl pt-2">Why Atomic Epoch Swapping Eliminates Mutex Stalls</h3>
+            <p class="font-body">
+              Standard concurrent LRU caches protect their doubly-linked eviction lists with a read-write mutex or sharded spinlock. Under bursty traffic, cache-line bouncing across 64-core EPYC sockets degrades throughput even when 95% of requests are hits<sup class="font-mono-code text-[10px] text-[#0F766E] font-bold ml-0.5">[S2]</sup>. By replacing mutable linked lists with a pre-allocated ring of immutable snapshot slots, readers acquire data via a single <span class="inline-code">Acquire</span> atomic load without ever blocking a background WAL applier thread.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 space-y-4">
+            <div class="p-3.5 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] space-y-1">
+              <div class="font-mono-code text-[10px] font-semibold text-[#D9381E]">[S1] SIDENOTE · HLC EPOCHS</div>
+              <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
+                Hybrid Logical Clocks combine physical NTP wall time (48 bits) with a monotonic logical counter (16 bits), preventing clock-skew anomalies across edge nodes.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] space-y-1">
+              <div class="font-mono-code text-[10px] font-semibold text-[#0F766E]">[S2] BENCHMARK · CACHE BOUNCING</div>
+              <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
+                Removing the <code class="font-mono-code text-[11px]">RwLock</code> on L1 metadata lookups reduced CPU L3 cache misses from 18.4% to 1.9% at 100k RPS.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4 pt-4 border-t border-[#CBD5E1]">
+          <div class="font-mono-code text-[11px] uppercase tracking-wider text-[#57534E] font-semibold">
+            Semantic Callout &amp; Guardrail Taxonomy
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="callout-focal p-4 space-y-1.5">
+              <div class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#D9381E]">
+                Focal Rule · Lease Expiration
+              </div>
+              <p class="font-body text-sm m-0 text-[#141413]">
+                If an edge node fails to renew its WAL heartbeat within <strong>2,000ms</strong>, it must immediately evict local ring slots and route reads to the regional quorum.
+              </p>
+            </div>
+
+            <div class="callout-verified p-4 space-y-1.5">
+              <div class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#0F766E]">
+                Verified Invariant · Monotonicity
+              </div>
+              <p class="font-body text-sm m-0 text-[#141413]">
+                A client presenting <span class="inline-code">client_hlc &gt; slot_hlc</span> bypasses the ring buffer and triggers an asynchronous fast-forward barrier.
+              </p>
+            </div>
+
+            <div class="callout-note p-4 space-y-1.5">
+              <div class="font-mono-code text-[10px] uppercase tracking-wider font-semibold text-[#57534E]">
+                Operational Note · Memory Budget
+              </div>
+              <p class="font-body text-sm m-0 text-[#292524]">
+                Each 64-slot ring buffer consumes a fixed <strong>512 MB</strong> hugepage allocation per worker process with zero heap fragmentation.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-[4px] bg-[#FAFDFB] border border-[#0F766E] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="badge-teal">RECOMMENDED PATTERN</span>
+                <span class="font-mono-code text-[11px] text-[#0F766E]">Wait-Free Read</span>
+              </div>
+              <p class="font-body text-sm m-0 text-[#141413]">
+                Load the active slot index via <span class="inline-code">Ordering::Acquire</span> and clone the immutable <span class="inline-code">Arc&lt;SnapshotPage&gt;</span> reference before deserializing fields.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#FFFDFB] border border-[#D9381E] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="badge-orange">ANTI-PATTERN · AVOID</span>
+                <span class="font-mono-code text-[11px] text-[#D9381E]">Mutex Serialization</span>
+              </div>
+              <p class="font-body text-sm m-0 text-[#141413]">
+                Never hold a write guard across network I/O or WAL decompression; a single slow packet will stall all 64 reader threads on the socket.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 03: EDITORIAL SVG DIAGRAM SUITE (3 INTERACTIVE TABS)
+           ===================================================================== -->
+      <section id="sec-diagrams" class="surface-card p-6 sm:p-10 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#CBD5E1] pb-4">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 03 · 4px Grid &amp; Orthogonal Routing</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">2. Editorial SVG Diagram Suite</h2>
+          </div>
+
+          <div class="inline-flex rounded-[4px] bg-[#E4E4E7] p-1 border border-[#CBD5E1] font-ui text-xs" id="diagramTabs">
+            <button data-diag="topology" class="px-3 py-1.5 rounded-[3px] bg-white text-[#141413] font-semibold border border-[#CBD5E1]">
+              2.1 System Topology
+            </button>
+            <button data-diag="sequence" class="px-3 py-1.5 rounded-[3px] text-[#57534E] hover:text-[#141413]">
+              2.2 Sequence Lifeline
+            </button>
+            <button data-diag="state" class="px-3 py-1.5 rounded-[3px] text-[#57534E] hover:text-[#141413]">
+              2.3 Lease State Machine
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: SYSTEM TOPOLOGY DIAGRAM -->
+        <div id="diagPanel-topology" class="space-y-3">
+          <div class="flex flex-wrap items-center justify-between text-xs font-mono-code text-[#57534E]">
+            <span>FIG 2.1 — MULTI-TIER READ-THROUGH CACHE &amp; QUORUM STORAGE TOPOLOGY</span>
+            <span>DENSITY: 5 NODES · 4PX GRID</span>
+          </div>
+          <div class="surface-well p-4 overflow-x-auto">
+            <svg viewBox="0 0 760 248" width="100%" height="248" role="img" aria-labelledby="topTitle" class="min-w-[620px]">
+              <title id="topTitle">System Topology Diagram</title>
+              <defs>
+                <marker id="arrMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#57534E" />
+                </marker>
+                <marker id="arrOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D9381E" />
+                </marker>
+                <marker id="arrTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F766E" />
+                </marker>
+              </defs>
+
+              <line x1="0" y1="208" x2="760" y2="208" stroke="#CBD5E1" stroke-width="1" />
+
+              <!-- CONNECTORS -->
+              <path d="M 148 104 L 220 104" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#arrTeal)" />
+              <rect x="156" y="84" width="52" height="14" rx="2" fill="#E4E4E7" />
+              <text x="182" y="94" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">mTLS 1.3</text>
+
+              <path d="M 360 88 L 400 88 Q 408 88 408 80 L 408 52 Q 408 44 416 44 L 464 44" fill="none" stroke="#D9381E" stroke-width="2" marker-end="url(#arrOrange)" />
+              <rect x="376" y="22" width="76" height="14" rx="2" fill="#FFEDD5" />
+              <text x="414" y="32" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">94.6% HIT (1.8ms)</text>
+
+              <path d="M 360 120 L 400 120 Q 408 120 408 128 L 408 156 Q 408 164 416 164 L 464 164" fill="none" stroke="#57534E" stroke-width="1.25" stroke-dasharray="4 3" marker-end="url(#arrMuted)" />
+              <rect x="376" y="170" width="76" height="14" rx="2" fill="#E4E4E7" />
+              <text x="414" y="180" text-anchor="middle" class="font-mono-code" font-size="8" fill="#57534E">5.4% MISS (14ms)</text>
+
+              <path d="M 656 136 L 656 80" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#arrTeal)" />
+              <rect x="616" y="98" width="80" height="14" rx="2" fill="#CCFBF1" />
+              <text x="656" y="108" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">WAL STREAM &lt;8ms</text>
+
+              <!-- NODES -->
+              <rect x="20" y="76" width="128" height="56" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
+              <text x="32" y="94" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">INGRESS · CLIENT</text>
+              <text x="32" y="110" class="font-ui" font-size="12" font-weight="600" fill="#141413">Edge SDK Session</text>
+              <text x="32" y="124" class="font-mono-code" font-size="9" fill="#57534E">hlc_token: v4</text>
+
+              <rect x="224" y="76" width="136" height="56" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
+              <text x="236" y="94" class="font-mono-code" font-size="8" fill="#57534E">GATEWAY · ROUTER</text>
+              <text x="236" y="110" class="font-ui" font-size="12" font-weight="600" fill="#141413">Epoch Classifier</text>
+              <text x="236" y="124" class="font-mono-code" font-size="9" fill="#57534E">grpc :8443</text>
+
+              <rect x="468" y="16" width="268" height="60" rx="4" fill="#FFFFFF" stroke="#D9381E" stroke-width="2" />
+              <text x="480" y="34" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">FOCAL NODE · L1 WAIT-FREE CACHE</text>
+              <text x="480" y="50" class="font-ui" font-size="12" font-weight="600" fill="#141413">64-Slot Atomic Snapshot Ring Buffer</text>
+              <text x="480" y="66" class="font-mono-code" font-size="9" fill="#292524">Ordering::Acquire · lease_ttl=2000ms</text>
+
+              <rect x="468" y="136" width="268" height="56" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
+              <text x="480" y="154" class="font-mono-code" font-size="8" fill="#57534E">PRIMARY LEDGER · RAFT QUORUM</text>
+              <text x="480" y="170" class="font-ui" font-size="12" font-weight="600" fill="#141413">Regional Postgres + Logical WAL</text>
+              <text x="480" y="184" class="font-mono-code" font-size="9" fill="#57534E">synchronous_commit = local</text>
+
+              <!-- Legend Strip -->
+              <circle cx="28" cy="228" r="4" fill="#D9381E" />
+              <text x="38" y="231" class="font-mono-code" font-size="9" fill="#292524">Focal Hot Path (Wait-Free L1 Read)</text>
+              <circle cx="248" cy="228" r="4" fill="#0F766E" />
+              <text x="258" y="231" class="font-mono-code" font-size="9" fill="#292524">Verified Replication &amp; mTLS Ingress</text>
+              <circle cx="488" cy="228" r="4" fill="#57534E" />
+              <text x="498" y="231" class="font-mono-code" font-size="9" fill="#292524">Cold Quorum Fallback (HLC Barrier Miss)</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- TAB 2: SEQUENCE LIFELINE DIAGRAM -->
+        <div id="diagPanel-sequence" class="hidden space-y-3">
+          <div class="flex flex-wrap items-center justify-between text-xs font-mono-code text-[#57534E]">
+            <span>FIG 2.2 — REQUEST TIMELINE &amp; EPOCH VERIFICATION SEQUENCE</span>
+            <span>TOTAL ELAPSED: 1.84 MS</span>
+          </div>
+          <div class="surface-well p-4 overflow-x-auto">
+            <svg viewBox="0 0 760 248" width="100%" height="248" role="img" aria-labelledby="seqTitle" class="min-w-[620px]">
+              <title id="seqTitle">Sequence Lifeline Diagram</title>
+              <defs>
+                <marker id="seqOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D9381E" />
+                </marker>
+                <marker id="seqTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F766E" />
+                </marker>
+              </defs>
+
+              <line x1="100" y1="52" x2="100" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 4" />
+              <line x1="300" y1="52" x2="300" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 4" />
+              <line x1="500" y1="52" x2="500" y2="220" stroke="#D9381E" stroke-width="1.5" stroke-dasharray="4 4" />
+              <line x1="680" y1="52" x2="680" y2="220" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 4" />
+
+              <rect x="36" y="16" width="128" height="36" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
+              <text x="100" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#141413">Client SDK</text>
+
+              <rect x="236" y="16" width="128" height="36" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
+              <text x="300" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#141413">Edge Router</text>
+
+              <rect x="428" y="16" width="144" height="36" rx="4" fill="#FFFFFF" stroke="#D9381E" stroke-width="2" />
+              <text x="500" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#D9381E">Ring Buffer (L1)</text>
+
+              <rect x="616" y="16" width="128" height="36" rx="4" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" />
+              <text x="680" y="38" text-anchor="middle" class="font-ui" font-size="11" font-weight="600" fill="#57534E">WAL Applier</text>
+
+              <path d="M 680 80 L 508 80" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#seqTeal)" />
+              <rect x="536" y="62" width="112" height="14" rx="2" fill="#CCFBF1" />
+              <text x="592" y="72" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">1. store(epoch_42)</text>
+
+              <path d="M 100 112 L 292 112" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#seqTeal)" />
+              <rect x="136" y="94" width="124" height="14" rx="2" fill="#E4E4E7" />
+              <text x="198" y="104" text-anchor="middle" class="font-mono-code" font-size="8" fill="#141413">2. GET /state (min_hlc=41)</text>
+
+              <path d="M 300 144 L 492 144" fill="none" stroke="#D9381E" stroke-width="2" marker-end="url(#seqOrange)" />
+              <rect x="332" y="126" width="136" height="14" rx="2" fill="#FFEDD5" />
+              <text x="400" y="136" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">3. load_acquire(slot_42)</text>
+
+              <path d="M 500 176 L 308 176" fill="none" stroke="#D9381E" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#seqOrange)" />
+              <rect x="340" y="158" width="120" height="14" rx="2" fill="#E4E4E7" />
+              <text x="400" y="168" text-anchor="middle" class="font-mono-code" font-size="8" fill="#141413">4. Arc&lt;Page&gt; (0.12ms)</text>
+
+              <path d="M 300 204 L 108 204" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#seqTeal)" />
+              <rect x="140" y="186" width="120" height="14" rx="2" fill="#CCFBF1" />
+              <text x="200" y="196" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">5. 200 OK (1.84ms total)</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- TAB 3: LEASE STATE MACHINE DIAGRAM -->
+        <div id="diagPanel-state" class="hidden space-y-3">
+          <div class="flex flex-wrap items-center justify-between text-xs font-mono-code text-[#57534E]">
+            <span>FIG 2.3 — LEASE VALIDITY &amp; CIRCUIT-BREAKER STATE MACHINE</span>
+            <span>3 STATES · ORTHOGONAL TRANSITIONS</span>
+          </div>
+          <div class="surface-well p-4 overflow-x-auto">
+            <svg viewBox="0 0 760 220" width="100%" height="220" role="img" aria-labelledby="stTitle" class="min-w-[620px]">
+              <title id="stTitle">Lease State Machine Diagram</title>
+              <defs>
+                <marker id="stOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D9381E" />
+                </marker>
+                <marker id="stTeal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0F766E" />
+                </marker>
+                <marker id="stMuted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#57534E" />
+                </marker>
+              </defs>
+
+              <path d="M 212 88 L 296 88" fill="none" stroke="#D9381E" stroke-width="2" marker-end="url(#stOrange)" />
+              <rect x="218" y="68" width="72" height="14" rx="2" fill="#FFEDD5" />
+              <text x="254" y="78" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">lag &gt; 1500ms</text>
+
+              <path d="M 468 88 L 552 88" fill="none" stroke="#57534E" stroke-width="1.5" marker-end="url(#stMuted)" />
+              <rect x="474" y="68" width="72" height="14" rx="2" fill="#E4E4E7" />
+              <text x="510" y="78" text-anchor="middle" class="font-mono-code" font-size="8" fill="#57534E">ttl &gt; 2000ms</text>
+
+              <path d="M 640 120 L 640 176 Q 640 184 632 184 L 124 184 Q 116 184 116 176 L 116 124" fill="none" stroke="#0F766E" stroke-width="1.5" marker-end="url(#stTeal)" />
+              <rect x="288" y="166" width="184" height="14" rx="2" fill="#CCFBF1" />
+              <text x="380" y="176" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">WAL Quorum Catch-Up Verified (hlc_sync)</text>
+
+              <rect x="28" y="56" width="184" height="64" rx="4" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.5" />
+              <text x="40" y="74" class="font-mono-code" font-size="8" font-weight="600" fill="#0F766E">STATE 01 · NOMINAL</text>
+              <text x="40" y="92" class="font-ui" font-size="12" font-weight="600" fill="#141413">Lease Active (Wait-Free)</text>
+              <text x="40" y="108" class="font-mono-code" font-size="9" fill="#57534E">Serve 100% from L1 Ring</text>
+
+              <rect x="300" y="56" width="168" height="64" rx="4" fill="#FFFFFF" stroke="#D9381E" stroke-width="2" />
+              <text x="312" y="74" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">STATE 02 · FOCAL ALERT</text>
+              <text x="312" y="92" class="font-ui" font-size="12" font-weight="600" fill="#141413">Soft-Grace Hedging</text>
+              <text x="312" y="108" class="font-mono-code" font-size="9" fill="#292524">Async Quorum Prefetch</text>
+
+              <rect x="556" y="56" width="176" height="64" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1" />
+              <text x="568" y="74" class="font-mono-code" font-size="8" fill="#57534E">STATE 03 · BYPASS</text>
+              <text x="568" y="92" class="font-ui" font-size="12" font-weight="600" fill="#141413">Lease Evicted</text>
+              <text x="568" y="108" class="font-mono-code" font-size="9" fill="#57534E">Direct Quorum Read</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 04: SYNTAX-HIGHLIGHTED CODE & CONFIGURATION VIEWER (3 TABS)
+           ===================================================================== -->
+      <section id="sec-code" class="surface-card p-6 sm:p-10 space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#CBD5E1] pb-4">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 04 · Semantic Syntax Highlighting</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">3. Syntax-Highlighted Code &amp; Invariant Callouts</h2>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex rounded-[4px] bg-[#E4E4E7] p-1 border border-[#CBD5E1] font-mono-code text-xs" id="codeTabs">
+              <button data-code="rust" class="px-3 py-1 rounded-[3px] bg-white text-[#141413] font-semibold border border-[#CBD5E1]">ring_buffer.rs</button>
+              <button data-code="toml" class="px-3 py-1 rounded-[3px] text-[#57534E] hover:text-[#141413]">edge_pop.toml</button>
+              <button data-code="sql" class="px-3 py-1 rounded-[3px] text-[#57534E] hover:text-[#141413]">quorum_verify.sql</button>
+            </div>
+            <button id="btnCopyCode" class="px-3 py-1.5 rounded-[4px] bg-white border border-[#CBD5E1] font-ui text-xs font-medium text-[#141413] hover:border-[#94A3B8]">
+              Copy Snippet
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: RUST SYNTAX-HIGHLIGHTED CODE BLOCK -->
+        <div id="codePanel-rust" class="rounded-[4px] border border-[#CBD5E1] overflow-hidden bg-[#FFFFFF]">
+          <div class="px-4 py-2 bg-[#E4E4E7] border-b border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-mono-code text-[11px] text-[#57534E]">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#D9381E]"></span>
+              <span class="font-semibold text-[#141413]">crates/edge-cache/src/ring_buffer.rs</span>
+            </div>
+            <span>Rust 1.82 · Wait-Free Atomic Path</span>
+          </div>
+          <div class="py-3 overflow-x-auto font-mono-code text-xs leading-[1.7] text-[#141413]" id="rawCodeRust">
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">01</span><span class="syn-cm">// Acquire the latest committed snapshot slot without locking the WAL writer thread</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">02</span><span class="syn-at">#[inline(always)]</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">03</span><span class="syn-kw">pub fn</span> <span class="syn-fn">read_monotonic</span><span class="syn-op">(&amp;</span><span class="syn-kw">self</span><span class="syn-op">,</span> min_hlc<span class="syn-op">:</span> <span class="syn-ty">HlcTimestamp</span><span class="syn-op">) -&gt;</span> <span class="syn-ty">Result</span><span class="syn-op">&lt;</span><span class="syn-ty">Arc</span><span class="syn-op">&lt;</span><span class="syn-ty">SnapshotPage</span><span class="syn-op">&gt;,</span> <span class="syn-ty">ReadFallback</span><span class="syn-op">&gt; {</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">04</span>    <span class="syn-kw">let</span> head_idx <span class="syn-op">=</span> <span class="syn-kw">self</span><span class="syn-op">.</span>active_epoch<span class="syn-op">.</span><span class="syn-fn">load</span><span class="syn-op">(</span><span class="syn-ty">Ordering</span><span class="syn-op">::</span><span class="syn-cn">Acquire</span><span class="syn-op">) &amp;</span> <span class="syn-cn">RING_MASK</span><span class="syn-op">;</span> <span class="syn-cm">// FOCAL: Zero-lock atomic load</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">05</span>    <span class="syn-kw">let</span> slot <span class="syn-op">=</span> <span class="syn-kw">unsafe</span> <span class="syn-op">{</span> <span class="syn-kw">self</span><span class="syn-op">.</span>slots<span class="syn-op">.</span><span class="syn-fn">get_unchecked</span><span class="syn-op">(</span>head_idx<span class="syn-op">) }.</span><span class="syn-fn">load</span><span class="syn-op">();</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">06</span>    <span class="syn-kw">if</span> slot<span class="syn-op">.</span><span class="syn-fn">lease_valid_until</span><span class="syn-op">() &gt;=</span> <span class="syn-ty">Instant</span><span class="syn-op">::</span><span class="syn-fn">now</span><span class="syn-op">() &amp;&amp;</span> slot<span class="syn-op">.</span>hlc_watermark <span class="syn-op">&gt;=</span> min_hlc <span class="syn-op">{</span> <span class="syn-cm">// VERIFIED: SLA invariant</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">07</span>        <span class="syn-kw">return</span> <span class="syn-cn">Ok</span><span class="syn-op">(</span><span class="syn-ty">Arc</span><span class="syn-op">::</span><span class="syn-fn">clone</span><span class="syn-op">(&amp;</span>slot<span class="syn-op">.</span>page<span class="syn-op">));</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">08</span>    <span class="syn-op">}</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">09</span>    <span class="syn-cn">Err</span><span class="syn-op">(</span><span class="syn-ty">ReadFallback</span><span class="syn-op">::</span><span class="syn-cn">RouteToQuorum</span> <span class="syn-op">{</span> region<span class="syn-op">:</span> <span class="syn-st">"ap-southeast-1"</span><span class="syn-op">,</span> observed_hlc<span class="syn-op">:</span> slot<span class="syn-op">.</span>hlc_watermark <span class="syn-op">})</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">10</span><span class="syn-op">}</span></div>
+          </div>
+        </div>
+
+        <!-- TAB 2: TOML SYNTAX-HIGHLIGHTED CONFIG BLOCK -->
+        <div id="codePanel-toml" class="hidden rounded-[4px] border border-[#CBD5E1] overflow-hidden bg-[#FFFFFF]">
+          <div class="px-4 py-2 bg-[#E4E4E7] border-b border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-mono-code text-[11px] text-[#57534E]">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#0F766E]"></span>
+              <span class="font-semibold text-[#141413]">config/pop-sin-01/edge_pop.toml</span>
+            </div>
+            <span>TOML v1.0 · Production Topology Profile</span>
+          </div>
+          <div class="py-3 overflow-x-auto font-mono-code text-xs leading-[1.7] text-[#141413]" id="rawCodeToml">
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">01</span><span class="syn-cm"># Regional Edge POP Configuration — Singapore (sin-01)</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">02</span><span class="syn-at">[ring_buffer]</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">03</span>pop_id <span class="syn-op">=</span> <span class="syn-st">"sin-01-primary"</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">04</span>slot_count <span class="syn-op">=</span> <span class="syn-cn">64</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">05</span>hugepage_size_mb <span class="syn-op">=</span> <span class="syn-cn">512</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">06</span>zero_copy_mmap <span class="syn-op">=</span> <span class="syn-cn">true</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">07</span>max_lease_staleness_ms <span class="syn-op">=</span> <span class="syn-cn">2000</span>  <span class="syn-cm"># FOCAL: Hard upper bound before quorum fallback</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">08</span>soft_hedge_threshold_ms <span class="syn-op">=</span> <span class="syn-cn">1500</span> <span class="syn-cm"># VERIFIED: Trigger async background WAL prefetch</span></div>
+          </div>
+        </div>
+
+        <!-- TAB 3: SQL SYNTAX-HIGHLIGHTED QUERY BLOCK -->
+        <div id="codePanel-sql" class="hidden rounded-[4px] border border-[#CBD5E1] overflow-hidden bg-[#FFFFFF]">
+          <div class="px-4 py-2 bg-[#E4E4E7] border-b border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-mono-code text-[11px] text-[#57534E]">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#1D4ED8]"></span>
+              <span class="font-semibold text-[#141413]">queries/quorum_verify.sql</span>
+            </div>
+            <span>PostgreSQL 17 · Quorum Watermark Audit</span>
+          </div>
+          <div class="py-3 overflow-x-auto font-mono-code text-xs leading-[1.7] text-[#141413]" id="rawCodeSql">
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">01</span><span class="syn-cm">-- Verify that regional WAL replication lag stays within the 1,800ms SLA window</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">02</span><span class="syn-kw">SELECT</span> pop_region<span class="syn-op">,</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">03</span>       <span class="syn-fn">MAX</span><span class="syn-op">(</span>hlc_epoch<span class="syn-op">)</span> <span class="syn-kw">AS</span> latest_epoch<span class="syn-op">,</span></div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#FFEDD5]/75 border-l-2 border-[#D9381E]"><span aria-hidden="true" class="syn-ln" style="color:#D9381E;font-weight:600;">04</span>       <span class="syn-fn">PERCENTILE_CONT</span><span class="syn-op">(</span><span class="syn-cn">0.99</span><span class="syn-op">)</span> <span class="syn-kw">WITHIN GROUP</span> <span class="syn-op">(</span><span class="syn-kw">ORDER BY</span> repl_lag_ms<span class="syn-op">)</span> <span class="syn-kw">AS</span> p99_lag_ms</div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">05</span><span class="syn-kw">FROM</span>   edge_lease_telemetry</div>
+            <div class="px-4 py-0.5 whitespace-pre bg-[#CCFBF1]/75 border-l-2 border-[#0F766E]"><span aria-hidden="true" class="syn-ln" style="color:#0F766E;font-weight:600;">06</span><span class="syn-kw">WHERE</span>  pop_region <span class="syn-op">=</span> <span class="syn-st">'ap-southeast-1'</span> <span class="syn-kw">AND</span> lease_status <span class="syn-op">=</span> <span class="syn-st">'VERIFIED'</span></div>
+            <div class="px-4 py-0.5 whitespace-pre"><span aria-hidden="true" class="syn-ln">07</span><span class="syn-kw">GROUP BY</span> pop_region <span class="syn-kw">HAVING</span> <span class="syn-fn">MAX</span><span class="syn-op">(</span>repl_lag_ms<span class="syn-op">) &lt;</span> <span class="syn-cn">1800</span><span class="syn-op">;</span></div>
+          </div>
+        </div>
+
+        <!-- SYNTAX HIGHLIGHTING TOKEN LEGEND STRIP -->
+        <div class="p-3 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] flex flex-wrap items-center justify-between gap-2 font-mono-code text-[11px]">
+          <span class="text-[#57534E] font-semibold uppercase text-[10px]">Syntax Token Palette:</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <span><span class="syn-kw">keyword</span> (#B91C1C)</span>
+            <span><span class="syn-ty">Type/Struct</span> (#0F766E)</span>
+            <span><span class="syn-fn">function()</span> (#1D4ED8)</span>
+            <span><span class="syn-cn">CONSTANT/42</span> (#B45309)</span>
+            <span><span class="syn-st">"string"</span> (#15803D)</span>
+            <span><span class="syn-at">#[attribute]</span> (#6D28D9)</span>
+            <span><span class="syn-cm">// comment</span> (#78716C)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 05: INTERACTIVE TRADE-OFF MATRIX & ADR ACCORDION
+           ===================================================================== -->
+      <section id="sec-matrix" class="surface-card p-6 sm:p-10 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#CBD5E1] pb-4">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 05 · Decision Analysis</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">4. Quantitative Trade-Off Matrix &amp; Decision Log</h2>
+          </div>
+
+          <div class="inline-flex rounded-[4px] bg-[#E4E4E7] p-1 border border-[#CBD5E1] font-ui text-xs" id="matrixFilterGroup">
+            <button data-filter="all" class="px-3 py-1 rounded-[3px] bg-white text-[#141413] font-semibold border border-[#CBD5E1]">All Strategies (4)</button>
+            <button data-filter="adopted" class="px-3 py-1 rounded-[3px] text-[#57534E] hover:text-[#141413]">Adopted Only</button>
+            <button data-filter="rejected" class="px-3 py-1 rounded-[3px] text-[#57534E] hover:text-[#141413]">Rejected</button>
+          </div>
+        </div>
+
+        <div class="surface-card overflow-x-auto">
+          <table class="w-full text-left border-collapse font-ui text-xs sm:text-sm">
+            <caption class="sr-only">Illustrative comparison of read strategies, latency, staleness, and adoption status.</caption>
+            <thead>
+              <tr class="bg-[#E4E4E7] border-b border-[#CBD5E1]">
+                <th class="py-3 px-4 font-semibold text-[#141413]">Architecture Strategy</th>
+                <th class="py-3 px-4 font-semibold text-[#141413]">p50 / p99 Latency</th>
+                <th class="py-3 px-4 font-semibold text-[#141413]">Max Throughput</th>
+                <th class="py-3 px-4 font-semibold text-[#141413]">Consistency Guarantee</th>
+                <th class="py-3 px-4 font-semibold text-[#141413]">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#CBD5E1]" id="matrixTableBody">
+              <tr data-status="adopted" class="bg-[#FFFDFB]">
+                <td class="py-3 px-4 font-semibold text-[#141413]">Atomic Ring Buffer + HLC Lease</td>
+                <td class="py-3 px-4 font-mono-code font-semibold text-[#D9381E]">0.4 ms / 1.84 ms</td>
+                <td class="py-3 px-4 font-mono-code text-[#0F766E]">450,000 RPS</td>
+                <td class="py-3 px-4 text-[#292524]">Session Monotonic (&lt;2s bound)</td>
+                <td class="py-3 px-4"><span class="badge-orange">ADOPTED PRIMARY</span></td>
+              </tr>
+              <tr data-status="adopted">
+                <td class="py-3 px-4 font-medium text-[#141413]">Client SDK Immutable Memoization</td>
+                <td class="py-3 px-4 font-mono-code text-[#0F766E]">0.1 ms / 0.35 ms</td>
+                <td class="py-3 px-4 font-mono-code text-[#292524]">Local Memory</td>
+                <td class="py-3 px-4 text-[#292524]">Content-Addressed Static Assets</td>
+                <td class="py-3 px-4"><span class="badge-teal">ADOPTED L0</span></td>
+              </tr>
+              <tr data-status="rejected">
+                <td class="py-3 px-4 font-medium text-[#292524]">Cross-Region Raft Quorum Read</td>
+                <td class="py-3 px-4 font-mono-code text-[#57534E]">6.8 ms / 14.20 ms</td>
+                <td class="py-3 px-4 font-mono-code text-[#57534E]">42,000 RPS</td>
+                <td class="py-3 px-4 text-[#57534E]">Strict Linearizable</td>
+                <td class="py-3 px-4"><span class="badge-neutral">REJECTED (LATENCY)</span></td>
+              </tr>
+              <tr data-status="rejected">
+                <td class="py-3 px-4 font-medium text-[#292524]">Sharded RwLock In-Memory LRU</td>
+                <td class="py-3 px-4 font-mono-code text-[#57534E]">1.1 ms / 9.60 ms</td>
+                <td class="py-3 px-4 font-mono-code text-[#57534E]">115,000 RPS</td>
+                <td class="py-3 px-4 text-[#57534E]">TTL Eventual (Unbounded Skew)</td>
+                <td class="py-3 px-4"><span class="badge-neutral">REJECTED (LOCK STALL)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <div class="font-mono-code text-[11px] uppercase tracking-wider text-[#57534E] font-semibold">
+            Expandable Decision Record Clauses (Click to toggle)
+          </div>
+
+          <div class="border border-[#CBD5E1] rounded-[4px] bg-white overflow-hidden">
+            <button class="adr-toggle w-full px-4 py-3 text-left font-ui text-xs sm:text-sm font-semibold text-[#141413] flex items-center justify-between hover:bg-[#F4F4F6] transition" data-target="adr-1">
+              <span>Clause A · Why 2,000ms Was Chosen as the Hard Lease Boundary</span>
+              <span class="font-mono-code text-xs text-[#D9381E]">[−]</span>
+            </button>
+            <div id="adr-1" class="px-4 pb-4 pt-1 border-t border-[#CBD5E1] font-body text-sm text-[#292524]">
+              Telemetry across 140M user sessions showed that 99.4% of cross-tab state transitions occur either within the same HTTP/2 connection (handled via HLC session tokens) or more than 3 seconds apart. A 2,000ms lease window captures 94.6% of global read traffic while keeping worst-case unauthenticated staleness imperceptible.
+            </div>
+          </div>
+
+          <div class="border border-[#CBD5E1] rounded-[4px] bg-white overflow-hidden">
+            <button class="adr-toggle w-full px-4 py-3 text-left font-ui text-xs sm:text-sm font-semibold text-[#141413] flex items-center justify-between hover:bg-[#F4F4F6] transition" data-target="adr-2">
+              <span>Clause B · Split-Brain &amp; Partition Recovery Protocol</span>
+              <span class="font-mono-code text-xs text-[#57534E]">[+]</span>
+            </button>
+            <div id="adr-2" class="hidden px-4 pb-4 pt-1 border-t border-[#CBD5E1] font-body text-sm text-[#292524]">
+              When an edge POP loses its logical WAL stream from the primary quorum, the local monotonic clock automatically trips the 1,500ms soft-hedge threshold and begins routing reads directly over the backup backbone link before the 2,000ms hard eviction expires.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 06: PHASED MIGRATION TIMELINE & 2x2 QUADRANT MATRIX
+           ===================================================================== -->
+      <section id="sec-timeline" class="surface-card p-6 sm:p-10 space-y-6">
+        <div class="border-b border-[#CBD5E1] pb-4">
+          <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 06 · Spatial &amp; Temporal Models</span>
+          <h2 class="font-display text-2xl sm:text-3xl mt-1">5. Rollout Timeline &amp; 2x2 Trade-Off Quadrant</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="font-mono-code text-[11px] uppercase tracking-wider text-[#57534E] font-semibold">
+              3-Stage Production Cutover Sequence
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#0F766E] flex gap-4">
+              <div class="font-display text-2xl text-[#0F766E] shrink-0">01</div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="font-ui text-sm font-semibold text-[#141413]">Shadow Ring Verification</span>
+                  <span class="badge-teal">COMPLETED</span>
+                </div>
+                <p class="font-body text-sm m-0">
+                  Mirror 10% of production reads to the L1 ring buffer asynchronously and log any HLC watermark divergence without serving ring responses.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#D9381E] flex gap-4">
+              <div class="font-display text-2xl text-[#D9381E] shrink-0">02</div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="font-ui text-sm font-semibold text-[#141413]">Canary POP Cutover (sin-01, nrt-01)</span>
+                  <span class="badge-orange">ACTIVE STAGE</span>
+                </div>
+                <p class="font-body text-sm m-0">
+                  Enable wait-free L1 serving for read-heavy endpoints with automatic fallback on <span class="inline-code">lease_ttl &gt; 2000ms</span>.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] flex gap-4">
+              <div class="font-display text-2xl text-[#57534E] shrink-0">03</div>
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="font-ui text-sm font-semibold text-[#141413]">Global Fleet Rollout (12 POPs)</span>
+                  <span class="badge-neutral">SCHEDULED NOV 2026</span>
+                </div>
+                <p class="font-body text-sm m-0">
+                  Decommission legacy sharded RwLock LRU instances and reclaim 38% of edge compute vCPUs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-3">
+            <div class="font-mono-code text-[11px] uppercase tracking-wider text-[#57534E] font-semibold">
+              2x2 Latency vs. Consistency Quadrant
+            </div>
+            <div class="surface-well p-4">
+              <svg viewBox="0 0 360 260" width="100%" height="260" role="img" aria-labelledby="quadTitle">
+                <title id="quadTitle">2x2 Latency vs Consistency Quadrant</title>
+                <rect x="32" y="16" width="304" height="208" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1" rx="4" />
+                <line x1="184" y1="16" x2="184" y2="224" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" />
+                <line x1="32" y1="120" x2="336" y2="120" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4 4" />
+
+                <text x="184" y="246" text-anchor="middle" class="font-mono-code" font-size="9" fill="#57534E">CONSISTENCY GUARANTEE (EVENTUAL &rarr; MONOTONIC / LINEAR)</text>
+                <text x="14" y="120" text-anchor="middle" transform="rotate(-90 14 120)" class="font-mono-code" font-size="9" fill="#57534E">SPEED (LOW LATENCY &rarr;)</text>
+
+                <circle cx="268" cy="56" r="7" fill="#D9381E" />
+                <rect x="202" y="28" width="122" height="18" rx="3" fill="#FFEDD5" stroke="#D9381E" stroke-width="1" />
+                <text x="263" y="40" text-anchor="middle" class="font-mono-code" font-size="8" font-weight="600" fill="#D9381E">HLC Ring Buffer (1.8ms)</text>
+
+                <circle cx="96" cy="48" r="5" fill="#0F766E" />
+                <text x="96" y="66" text-anchor="middle" class="font-ui" font-size="10" font-weight="600" fill="#0F766E">Client L0 Cache</text>
+
+                <circle cx="112" cy="168" r="5" fill="#57534E" />
+                <text x="112" y="186" text-anchor="middle" class="font-ui" font-size="10" fill="#57534E">Sharded RwLock LRU</text>
+
+                <circle cx="284" cy="180" r="5" fill="#57534E" />
+                <text x="272" y="198" text-anchor="middle" class="font-ui" font-size="10" fill="#57534E">Global Raft Quorum</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 07: TYPOGRAPHY SCALE SPECIMEN
+           ===================================================================== -->
+      <section id="sec-type" class="surface-card p-6 sm:p-10 space-y-6">
+        <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-baseline justify-between gap-2">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 07 · Optical Scale</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">6. Typography &amp; Hierarchy Scale Specimen</h2>
+          </div>
+          <span class="badge-teal">Fraunces + Literata 440 + Geist</span>
+        </div>
+
+        <div class="divide-y divide-[#CBD5E1]">
+          <div class="py-4 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
+            <div class="sm:col-span-3 font-mono-code text-xs text-[#57534E]">
+              <div class="font-semibold text-[#141413]">Display H1</div>
+              <div>Fraunces · 500 · 40px</div>
+            </div>
+            <div class="sm:col-span-9 font-display text-3xl sm:text-4xl">
+              Architectural Clarity Through Disciplined Hierarchy
+            </div>
+          </div>
+
+          <div class="py-4 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
+            <div class="sm:col-span-3 font-mono-code text-xs text-[#57534E]">
+              <div class="font-semibold text-[#141413]">Section H2</div>
+              <div>Fraunces · 500 · 28px</div>
+            </div>
+            <div class="sm:col-span-9 font-display text-2xl sm:text-[28px]">
+              1. Bounded Staleness &amp; Monotonic Read Guarantees
+            </div>
+          </div>
+
+          <div class="py-4 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
+            <div class="sm:col-span-3 font-mono-code text-xs text-[#57534E]">
+              <div class="font-semibold text-[#D9381E]">Paragraph Body</div>
+              <div>Literata · 440 · 15.7px (0.98rem)</div>
+            </div>
+            <div class="sm:col-span-9 font-body max-w-[65ch]">
+              Set at optical weight 440 and 0.98rem with a 1.68 line-height, <strong>Literata</strong> delivers sturdy, even stems that never wash out on high-DPI monitors while matching the compact horizontal word density of a grotesque sans-serif.
+            </div>
+          </div>
+
+          <div class="py-4 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
+            <div class="sm:col-span-3 font-mono-code text-xs text-[#57534E]">
+              <div class="font-semibold text-[#141413]">UI &amp; Table Cell</div>
+              <div>Geist Sans · 400/600 · 13px</div>
+            </div>
+            <div class="sm:col-span-9 font-ui text-sm text-[#292524]">
+              <strong>Ring Buffer + Lease</strong> — 450,000 RPS sustained throughput across 12 regional edge POPs.
+            </div>
+          </div>
+
+          <div class="py-4 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
+            <div class="sm:col-span-3 font-mono-code text-xs text-[#57534E]">
+              <div class="font-semibold text-[#141413]">Technical Mono</div>
+              <div>Geist Mono · 500 · 12px</div>
+            </div>
+            <div class="sm:col-span-9 font-mono-code text-xs">
+              <span class="syn-kw">let</span> epoch <span class="syn-op">=</span> <span class="syn-ty">Ordering</span><span class="syn-op">::</span><span class="syn-cn">Acquire</span><span class="syn-op">;</span> <span class="syn-cm">// p99_latency_ms = 1.84</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 08: INTERACTIVE COLOR SWATCHES & CSS TOKEN EXPORTER
+           ===================================================================== -->
+      <section id="sec-tokens" class="surface-card p-6 sm:p-10 space-y-6">
+        <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#D9381E] font-semibold">Module 08 · Production Token Spec</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">7. Surface, Signal &amp; Syntax Color Tokens</h2>
+          </div>
+          <span class="font-mono-code text-xs text-[#57534E]">Click any swatch to copy hex</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3" id="swatchGrid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MODULE 09: AGENT INTEGRATION, SKILL.MD & CDN / GCS HUB
+           ===================================================================== -->
+      <section id="sec-agent" class="surface-card p-6 sm:p-10 space-y-6 border-[#0F766E]">
+        <div class="border-b border-[#CBD5E1] pb-4 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="font-mono-code text-[11px] uppercase tracking-wider text-[#0F766E] font-semibold">Module 09 · Machine-Readable Agent &amp; CDN Hub</span>
+            <h2 class="font-display text-2xl sm:text-3xl mt-1">8. Agent Skill, Repository Guides &amp; Cross-Site Imports</h2>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a href="./skills/swiss-atelier/SKILL.md" class="badge-teal hover:opacity-80">View Raw SKILL.md</a>
+            <a href="./AGENTS.md" class="badge-orange hover:opacity-80">View Raw AGENTS.md</a>
+            <a href="./llms.txt" class="badge-neutral hover:opacity-80">View llms.txt</a>
+          </div>
+        </div>
+
+        <p class="font-body max-w-[66ch]">
+          This living design system serves both human engineers and AI coding agents. All assets, token manifests, and agent skill instructions are bundled inside the repository and exposed directly as static HTTP endpoints.
+        </p>
+
+        <!-- 3-Card Endpoint & CDN Matrix -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="badge-orange">1. SHARED CSS / JS</span>
+              <span class="font-mono-code text-[10px] text-[#57534E]">dist/</span>
+            </div>
+            <div class="font-ui text-sm font-semibold text-[#141413]">Cross-Page Asset Links</div>
+            <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
+              Import <code class="inline-code">dist/atelier.css</code> and <code class="inline-code">dist/atelier.js</code> via GitHub Pages, jsDelivr CDN, or Google Cloud Storage.
+            </p>
+            <div class="pt-1 flex gap-2 font-mono-code text-[11px]">
+              <a href="./dist/atelier.css" class="text-[#D9381E] underline">./dist/atelier.css</a>
+              <a href="./dist/atelier.js" class="text-[#0F766E] underline">./dist/atelier.js</a>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#0F766E] space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="badge-teal">2. AGENT SKILL</span>
+              <span class="font-mono-code text-[10px] text-[#0F766E]">skills/swiss-atelier/</span>
+            </div>
+            <div class="font-ui text-sm font-semibold text-[#141413]">Reusable SKILL.md</div>
+            <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
+              Drop-in skill teaching any agent the 4-layer typography, Quiet Hairline rules, 4px SVG routing, and syntax palette.
+            </p>
+            <div class="pt-1 flex gap-2 font-mono-code text-[11px]">
+              <a href="./skills/swiss-atelier/SKILL.md" class="text-[#0F766E] font-semibold underline">./skills/swiss-atelier/SKILL.md</a>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-[4px] bg-[#F4F4F6] border border-[#CBD5E1] space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="badge-neutral">3. AGENT DISCOVERY</span>
+              <span class="font-mono-code text-[10px] text-[#57534E]">Root Manifests</span>
+            </div>
+            <div class="font-ui text-sm font-semibold text-[#141413]">AGENTS.md &amp; llms.txt</div>
+            <p class="font-ui text-xs text-[#292524] leading-relaxed m-0">
+              Point any agent at your hosted root URL or repo; <code class="inline-code">llms.txt</code> and <code class="inline-code">AGENTS.md</code> index every asset.
+            </p>
+            <div class="pt-1 flex gap-2 font-mono-code text-[11px]">
+              <a href="./AGENTS.md" class="text-[#141413] underline">./AGENTS.md</a>
+              <a href="./llms.txt" class="text-[#141413] underline">./llms.txt</a>
+              <a href="./templates/starter-adr.html" class="text-[#D9381E] underline">Starter HTML</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Agent / CDN Snippet Switcher -->
+        <div class="space-y-3 pt-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="inline-flex rounded-[4px] bg-[#E4E4E7] p-1 border border-[#CBD5E1] font-mono-code text-xs" id="agentTabs">
+              <button data-agent="cdn" class="px-3 py-1 rounded-[3px] bg-white text-[#141413] font-semibold border border-[#CBD5E1]">1. HTML Import</button>
+              <button data-agent="skill" class="px-3 py-1 rounded-[3px] text-[#57534E] hover:text-[#141413]">2. Agent Skill (SKILL.md)</button>
+              <button data-agent="prompt" class="px-3 py-1 rounded-[3px] text-[#57534E] hover:text-[#141413]">3. Agent Prompt to Use This Site</button>
+            </div>
+            <button id="btnCopyAgentBox" class="px-3 py-1.5 rounded-[4px] bg-[#0F766E] text-white font-ui text-xs font-medium hover:bg-[#0D635C]">
+              Copy Active Guide
+            </button>
+          </div>
+
+          <pre id="agentBox-cdn" class="p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">&lt;!-- Option A: Import via GitHub + jsDelivr CDN --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.css" /&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/Jeonkwan/swiss-atelier-design-system@v1.0.0/dist/atelier.js" defer&gt;&lt;/script&gt;
+</pre>
+
+          <pre id="agentBox-skill" class="hidden p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">---
+name: swiss-atelier
+description: Design and build technical explainers, architecture decision records (ADRs), system documentation, editorial SVG diagrams, and web pages using the Swiss Atelier (v1.0.0) design system.
+---
+# Swiss Atelier (v1.0.0) Quick Contract
+- Surfaces: Paper #F4F4F6 | Card #FFFFFF | Subtle Well #E4E4E7 | Hairline 1px solid #CBD5E1 (4px radius, 0 shadow)
+- Signals: Focal Zurich Orange #D9381E (max 1-2 per view) | Verified Deep Teal #0F766E | Muted Charcoal #57534E
+- Typography: Display 'Fraunces' (500, -0.02em) | Body 'Literata' (440, 0.98rem, lh 1.68, -0.005em) | UI 'Geist' | Mono 'Geist Mono'
+- Syntax Tokens: .syn-kw #B91C1C | .syn-ty #0F766E | .syn-fn #1D4ED8 | .syn-cn #B45309 | .syn-st #15803D | .syn-at #6D28D9 | .syn-cm #78716C
+- Diagrams: 4px grid, orthogonal right-angle paths with 8px rounded Q elbows, connectors drawn before nodes, opaque label masks.
+(Full SKILL.md available at ./skills/swiss-atelier/SKILL.md)</pre>
+
+          <pre id="agentBox-prompt" class="hidden p-4 rounded-[4px] bg-white border border-[#CBD5E1] font-mono-code text-xs leading-relaxed text-[#141413] overflow-x-auto m-0">Use the Swiss Atelier design system for this page.
+1. Read the agent skill and token rules from: https://jeonkwan.github.io/swiss-atelier-design-system/skills/swiss-atelier/SKILL.md (or ./skills/swiss-atelier/SKILL.md)
+2. Import the shared stylesheet and auto-highlighter runtime in &lt;head&gt;:
+   &lt;link rel="stylesheet" href="https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.css" /&gt;
+   &lt;script src="https://jeonkwan.github.io/swiss-atelier-design-system/dist/atelier.js" defer&gt;&lt;/script&gt;
+3. Follow the 1px Quiet Hairline architecture, Fraunces 500 + Literata 440 + Geist typography, 4px orthogonal SVG diagram rules, and [data-atelier-code] syntax highlighting.</pre>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div role="status" aria-live="polite" id="toastMsg" class="fixed bottom-5 right-5 z-50 hidden bg-[#141413] text-white font-ui text-xs font-medium px-4 py-2.5 rounded-[4px] border border-[#0F766E]">
+    Copied to clipboard!
+  </div>
+
+  <script src="./dist/site.js" defer></script>
+</body>
+</html>
